@@ -192,3 +192,75 @@ document.addEventListener("DOMContentLoaded", () => {
     img.addEventListener("dragstart", (e) => e.preventDefault());
   });
 });
+
+// Booking Form Validation & Toast Message
+document.addEventListener("DOMContentLoaded", () => {
+  const bookingForm = document.querySelector("#booking form");
+  const toast = document.getElementById("toastMessage");
+
+  if (!bookingForm) return;
+
+  bookingForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Get form values
+    const name = bookingForm.querySelector('input[type="text"]').value;
+    const treatment = bookingForm.querySelector("select").value;
+    const date = bookingForm.querySelector('input[type="date"]').value;
+
+    // Basic validation
+    if (!name.trim()) {
+      showToast("Please enter your name ❌", "error");
+      return;
+    }
+
+    if (!treatment) {
+      showToast("Please select a treatment ❌", "error");
+      return;
+    }
+
+    if (!date) {
+      showToast("Please select a date ❌", "error");
+      return;
+    }
+
+    // Success message
+    showToast(
+      `✅ Thank you ${name}! Your appointment has been submitted successfully.`,
+      "success"
+    );
+
+    // Reset form
+    bookingForm.reset();
+  });
+
+  function showToast(message, type) {
+    if (!toast) return;
+
+    // Set color based on message type
+    toast.className =
+      "fixed z-50 px-6 py-4 font-semibold tracking-wide text-center text-white transition-all duration-500 transform -translate-x-1/2 rounded-lg shadow-lg opacity-0 top-6 left-1/2";
+
+    if (type === "error") {
+      toast.classList.add("bg-red-600");
+    } else {
+      toast.classList.add("bg-[#daa520]");
+    }
+
+    // Show message
+    toast.textContent = message;
+    toast.classList.remove("hidden");
+    setTimeout(() => {
+      toast.classList.remove("opacity-0", "-translate-y-4");
+      toast.classList.add("opacity-100", "translate-y-0");
+    }, 50);
+
+    // Hide after 3 seconds
+    setTimeout(() => {
+      toast.classList.add("opacity-0", "-translate-y-4");
+      setTimeout(() => {
+        toast.classList.add("hidden");
+      }, 500);
+    }, 3000);
+  }
+});

@@ -15,12 +15,18 @@
     </style>
   </head>
   <body>
+    <!-- Toast Message -->
+    <div
+      id="toastMessage"
+      class="fixed z-50 hidden px-6 py-4 font-semibold tracking-wide text-center text-white transition-all duration-500 transform -translate-x-1/2 rounded-lg shadow-lg opacity-0 top-6 left-1/2"
+    ></div>
+
     <!-- HEADER SECTION -->
     <header
       class="absolute top-0 left-0 right-0 z-[1000] px-16 py-6 flex flex-col transition-all duration-500 ease-in-out"
       id="mainHeader"
     >
-      <div class="flex flex-row w-full justify-between items-center">
+      <div class="flex flex-row items-center justify-between w-full">
         <!-- Contact Information -->
         <div class="flex flex-col items-center">
           <div
@@ -60,7 +66,7 @@
         <!-- Logo -->
         <a
           href="/"
-          class="absolute left-1/2 -translate-x-1/2 flex items-center gap-4 no-underline"
+          class="absolute flex items-center gap-4 no-underline -translate-x-1/2 left-1/2"
         >
           <div
             class="w-[50px] h-[50px] border-2 border-gold rounded-full flex items-center justify-center text-2xl text-gold font-bold italic logo-glow"
@@ -84,7 +90,7 @@
 
       <!-- Mobile Menu Toggle -->
       <button
-        class="hidden p-2 bg-transparent border-none text-white cursor-pointer"
+        class="hidden p-2 text-white bg-transparent border-none cursor-pointer"
         aria-label="Toggle menu"
       >
         <svg
@@ -102,7 +108,7 @@
       </button>
 
       <!-- Navigation Menu -->
-      <nav class="flex gap-10 justify-center items-center mt-4">
+      <nav class="flex items-center justify-center gap-10 mt-4">
         <a
           href="/"
           class="text-white no-underline text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-gold after:to-brown after:transition-[width] after:duration-400 after:ease-in-out hover:text-gold hover:after:w-full"
@@ -133,7 +139,7 @@
 
     <!-- HERO SECTION -->
     <section
-      class="relative min-h-screen overflow-hidden flex flex-col"
+      class="relative flex flex-col min-h-screen overflow-hidden"
       id="heroSection"
     >
       <!-- Background Layers -->
@@ -156,51 +162,53 @@
           ></div>
         </div>
         <div
-          class="absolute inset-0 hero-bg-image bg-cover bg-no-repeat bg-top opacity-60"
+          class="absolute inset-0 bg-top bg-no-repeat hero-bg-image opacity-60"
         ></div>
       </div>
 
       <!-- Main Content -->
       <div
-        class="relative z-10 flex-1 flex flex-col justify-end items-center text-center px-8 pb-32"
+        class="relative z-10 flex flex-col items-start justify-end flex-1 text-left px-36 pb-44"
       >
-        <h1
-          class="text-[3rem] font-light text-white leading-tight tracking-wider uppercase opacity-0 fade-in-up"
-        >
-          FEEL YOUR BEST
-          <span class="block font-semibold shimmer-text">LOOK YOUR BEST</span>
-        </h1>
-        <p
-          class="text-xl text-white/80 mb-12 max-w-[800px] leading-relaxed fade-in-up-delay-1"
-        >
-          The leading destination for dermatology and aesthetic treatments in
-          Riyadh.
-        </p>
-        <div class="flex gap-8 fade-in-up-delay-2">
-          <a href="#booking">
-            <button
-              class="px-12 py-5 text-base uppercase tracking-[0.15rem] cursor-pointer transition-all duration-[400ms] ease-in-out border-none relative overflow-hidden font-semibold bg-gradient-to-br from-gold to-brown text-white shadow-[0_10px_40px_rgba(218,165,32,0.3)] before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-br before:from-brown before:to-gold before:opacity-0 before:transition-opacity before:duration-400 hover:before:opacity-100 hover:-translate-y-1.5 hover:shadow-[0_15px_50px_rgba(218,165,32,0.5)]"
-            >
-              <span class="relative z-[1]">Book Consultation</span>
-            </button>
-          </a>
-          <a href="#services">
-            <button
-              class="px-12 py-5 text-base uppercase tracking-[0.15rem] cursor-pointer transition-all duration-[400ms] ease-in-out bg-transparent border-2 border-white text-white relative overflow-hidden font-semibold hover:bg-white hover:text-black hover:-translate-y-1.5 hover:shadow-[0_15px_50px_rgba(255,255,255,0.2)]"
-            >
-              <span class="relative z-[1]">Find Your Procedure</span>
-            </button>
-          </a>
+        <div>
+          <h1
+            class="text-[3rem] font-light text-white leading-tight tracking-wider uppercase opacity-0 fade-in-up"
+          >
+            FEEL YOUR BEST
+            <span class="block font-semibold shimmer-text">LOOK YOUR BEST</span>
+          </h1>
+          <p
+            class="text-xl text-white/80 mb-12 max-w-[500px] leading-relaxed fade-in-up-delay-1"
+          >
+            The leading destination for dermatology and aesthetic treatments in
+            Riyadh.
+          </p>
+          <div class="flex gap-5 fade-in-up-delay-2">
+            <a href="#booking">
+              <button
+                class="px-4 py-5 text-base uppercase tracking-[0.15rem] cursor-pointer transition-all duration-[400ms] ease-in-out border-2 border-gold relative overflow-hidden font-semibold bg-gradient-to-br from-gold to-brown text-white shadow-[0_10px_40px_rgba(218,165,32,0.3)] before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-br before:from-brown before:to-gold before:opacity-0 before:transition-opacity before:duration-400 hover:before:opacity-100 hover:-translate-y-1.5 hover:shadow-[0_15px_50px_rgba(218,165,32,0.5)]"
+              >
+                <span class="relative z-[1]">Book Consultation</span>
+              </button>
+            </a>
+            <a href="#services">
+              <button
+                class="px-4 py-5 text-base uppercase tracking-[0.15rem] cursor-pointer transition-all duration-[400ms] ease-in-out bg-transparent border-2 border-white text-white relative overflow-hidden font-semibold hover:bg-white hover:text-black hover:-translate-y-1.5 hover:shadow-[0_15px_50px_rgba(255,255,255,0.2)]"
+              >
+                <span class="relative z-[1]">Find Your Procedure</span>
+              </button>
+            </a>
+          </div>
         </div>
       </div>
 
       <!-- Services Bar -->
-      <div class="relative z-10 px-16 py-8 flex justify-around">
+      <div class="relative z-10 flex justify-around px-16 py-8">
         <div
           class="flex items-center gap-1.5 text-white uppercase text-sm tracking-wider transition-all duration-300 cursor-default rounded-full no-underline hover:text-gold"
         >
           <svg
-            class="w-6 h-6 flex-shrink-0"
+            class="flex-shrink-0 w-6 h-6"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -220,7 +228,7 @@
           class="flex items-center gap-1.5 text-white uppercase text-sm tracking-wider transition-all duration-300 cursor-default px-6 py-2 rounded-full no-underline hover:text-gold"
         >
           <svg
-            class="w-6 h-6 flex-shrink-0"
+            class="flex-shrink-0 w-6 h-6"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -240,7 +248,7 @@
           class="flex items-center gap-1.5 text-white uppercase text-sm tracking-wider transition-all duration-300 cursor-default px-6 py-2 rounded-full no-underline hover:text-gold"
         >
           <svg
-            class="w-6 h-6 flex-shrink-0"
+            class="flex-shrink-0 w-6 h-6"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -259,7 +267,7 @@
           class="flex items-center gap-1.5 text-white uppercase text-sm tracking-wider transition-all duration-300 cursor-default px-6 py-2 rounded-full no-underline hover:text-gold"
         >
           <svg
-            class="w-6 h-6 flex-shrink-0"
+            class="flex-shrink-0 w-6 h-6"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -278,7 +286,7 @@
           class="flex items-center gap-1.5 text-white uppercase text-sm tracking-wider transition-all duration-300 cursor-default px-6 py-2 rounded-full no-underline hover:text-gold"
         >
           <svg
-            class="w-6 h-6 flex-shrink-0"
+            class="flex-shrink-0 w-6 h-6"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -297,7 +305,7 @@
           class="flex items-center gap-1.5 text-white uppercase text-sm tracking-wider transition-all duration-300 cursor-default px-6 py-2 rounded-full no-underline hover:text-gold"
         >
           <svg
-            class="w-6 h-6 flex-shrink-0"
+            class="flex-shrink-0 w-6 h-6"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -316,30 +324,30 @@
     </section>
 
     <!-- SERVICES SECTION -->
-    <section class="relative bg-beige py-20 overflow-hidden" id="services">
-      <div class="flex flex-col justify-center items-center pb-20">
-        <h2 class="text-3xl md:text-4xl font-semibold text-gold mb-4">
+    <section class="relative py-20 overflow-hidden bg-beige" id="services">
+      <div class="flex flex-col items-center justify-center pb-20">
+        <h2 class="mb-4 text-3xl font-semibold md:text-4xl text-gold">
           Aesthetic & Surgical Services
         </h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
+        <p class="max-w-2xl mx-auto text-gray-600">
           Enhancing your natural beauty through advanced cosmetic and
           dermatological procedures.
         </p>
       </div>
-      <div class="relative z-10 container mx-auto px-8 max-w-8xl">
+      <div class="container relative z-10 px-8 mx-auto max-w-8xl">
         <!-- Service Cards Container -->
         <div class="relative min-h-[600px]">
           <!-- Service Card 1 - FACELIFT -->
           <div
-            class="service-card active absolute inset-0 transition-all duration-700 ease-in-out"
+            class="absolute inset-0 transition-all duration-700 ease-in-out service-card active"
             data-service="facelift"
           >
             <div
-              class="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center h-full"
+              class="grid items-center h-full grid-cols-1 gap-0 lg:grid-cols-2"
             >
               <!-- Left Content -->
               <div
-                class="bg-white p-16 h-full flex flex-col justify-center fade-in-up"
+                class="flex flex-col justify-center h-full p-16 bg-white fade-in-up"
               >
                 <h2
                   class="text-5xl font-light text-[#333] mb-8 tracking-wide uppercase"
@@ -371,7 +379,7 @@
                 <img
                   src="images/Facelift.jpg"
                   alt="Facelift"
-                  class="w-full h-full object-cover"
+                  class="object-cover w-full h-full"
                 />
               </div>
             </div>
@@ -379,14 +387,14 @@
 
           <!-- Service Card 2 - RHINOPLASTY -->
           <div
-            class="service-card absolute inset-0 transition-all duration-700 ease-in-out opacity-0"
+            class="absolute inset-0 transition-all duration-700 ease-in-out opacity-0 service-card"
             data-service="rhinoplasty"
           >
             <div
-              class="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center h-full"
+              class="grid items-center h-full grid-cols-1 gap-0 lg:grid-cols-2"
             >
               <div
-                class="bg-white p-16 h-full flex flex-col justify-center fade-in-up"
+                class="flex flex-col justify-center h-full p-16 bg-white fade-in-up"
               >
                 <h2
                   class="text-5xl font-light text-[#333] mb-8 tracking-wide uppercase"
@@ -415,7 +423,7 @@
                 <img
                   src="images/Rhinoplasty.jpg"
                   alt="Rhinoplasty"
-                  class="w-full h-full object-cover"
+                  class="object-cover w-full h-full"
                 />
               </div>
             </div>
@@ -423,14 +431,14 @@
 
           <!-- Service Card 3 - MOMMY MAKEOVER -->
           <div
-            class="service-card absolute inset-0 transition-all duration-700 ease-in-out opacity-0"
+            class="absolute inset-0 transition-all duration-700 ease-in-out opacity-0 service-card"
             data-service="mommy"
           >
             <div
-              class="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center h-full"
+              class="grid items-center h-full grid-cols-1 gap-0 lg:grid-cols-2"
             >
               <div
-                class="bg-white p-16 h-full flex flex-col justify-center fade-in-up"
+                class="flex flex-col justify-center h-full p-16 bg-white fade-in-up"
               >
                 <h2
                   class="text-5xl font-light text-[#333] mb-8 tracking-wide uppercase"
@@ -458,7 +466,7 @@
                 <img
                   src="images/MommyMakeover.jpg"
                   alt="Mommy Makeover"
-                  class="w-full h-full object-cover"
+                  class="object-cover w-full h-full"
                 />
               </div>
             </div>
@@ -466,14 +474,14 @@
 
           <!-- Service Card 4 - TUMMY TUCK -->
           <div
-            class="service-card absolute inset-0 transition-all duration-700 ease-in-out opacity-0"
+            class="absolute inset-0 transition-all duration-700 ease-in-out opacity-0 service-card"
             data-service="tummy"
           >
             <div
-              class="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center h-full"
+              class="grid items-center h-full grid-cols-1 gap-0 lg:grid-cols-2"
             >
               <div
-                class="bg-white p-16 h-full flex flex-col justify-center fade-in-up"
+                class="flex flex-col justify-center h-full p-16 bg-white fade-in-up"
               >
                 <h2
                   class="text-5xl font-light text-[#333] mb-8 tracking-wide uppercase"
@@ -501,7 +509,7 @@
                 <img
                   src="images/TummyTuck.jpg"
                   alt="Tummy Tuck"
-                  class="w-full h-full object-cover"
+                  class="object-cover w-full h-full"
                 />
               </div>
             </div>
@@ -509,14 +517,14 @@
 
           <!-- Service Card 5 - LIPOSUCTION -->
           <div
-            class="service-card absolute inset-0 transition-all duration-700 ease-in-out opacity-0"
+            class="absolute inset-0 transition-all duration-700 ease-in-out opacity-0 service-card"
             data-service="lipo"
           >
             <div
-              class="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center h-full"
+              class="grid items-center h-full grid-cols-1 gap-0 lg:grid-cols-2"
             >
               <div
-                class="bg-white p-16 h-full flex flex-col justify-center fade-in-up"
+                class="flex flex-col justify-center h-full p-16 bg-white fade-in-up"
               >
                 <h2
                   class="text-5xl font-light text-[#333] mb-8 tracking-wide uppercase"
@@ -544,7 +552,7 @@
                 <img
                   src="images/Liposuction.jpg"
                   alt="Liposuction"
-                  class="w-full h-full object-cover"
+                  class="object-cover w-full h-full"
                 />
               </div>
             </div>
@@ -552,14 +560,14 @@
 
           <!-- Service Card 6 - INJECTABLES -->
           <div
-            class="service-card absolute inset-0 transition-all duration-700 ease-in-out opacity-0"
+            class="absolute inset-0 transition-all duration-700 ease-in-out opacity-0 service-card"
             data-service="inject"
           >
             <div
-              class="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center h-full"
+              class="grid items-center h-full grid-cols-1 gap-0 lg:grid-cols-2"
             >
               <div
-                class="bg-white p-16 h-full flex flex-col justify-center fade-in-up"
+                class="flex flex-col justify-center h-full p-16 bg-white fade-in-up"
               >
                 <h2
                   class="text-5xl font-light text-[#333] mb-8 tracking-wide uppercase"
@@ -587,7 +595,7 @@
                 <img
                   src="images/Injectables.jpg"
                   alt="Injectables"
-                  class="w-full h-full object-cover"
+                  class="object-cover w-full h-full"
                 />
               </div>
             </div>
@@ -595,7 +603,7 @@
         </div>
 
         <!-- Navigation Tabs -->
-        <div class="grid grid-cols-2 lg:grid-cols-6 gap-0 mt-8 shadow-lg">
+        <div class="grid grid-cols-2 gap-0 mt-8 shadow-lg lg:grid-cols-6">
           <button
             class="service-tab active bg-beige text-[#2c3e50] py-6 px-4 uppercase text-sm tracking-wider font-semibold transition-all duration-300 hover:bg-[#e5ddd0] flex items-center justify-center gap-2 cursor-pointer"
             data-target="facelift"
@@ -708,8 +716,8 @@
       <div class="about-particle"></div>
       <div class="about-particle"></div>
 
-      <div class="relative z-10 container mx-auto px-8 max-w-7xl">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="container relative z-10 px-8 mx-auto max-w-7xl">
+        <div class="grid items-center grid-cols-1 gap-16 lg:grid-cols-2">
           <!-- Left Content -->
           <div class="fade-in-up">
             <!-- Badge -->
@@ -722,14 +730,14 @@
             </div>
 
             <!-- Main Title -->
-            <h2 class="text-5xl font-light text-white mb-8 leading-tight">
+            <h2 class="mb-8 text-5xl font-light leading-tight text-white">
               BOARD CERTIFIED,<br />
               <span class="font-semibold">WORLD-RENOWNED</span><br />
               <span class="font-semibold">PLASTIC SURGEON</span>
             </h2>
 
             <!-- Description -->
-            <p class="text-lg text-white/70 leading-relaxed mb-12">
+            <p class="mb-12 text-lg leading-relaxed text-white/70">
               Renowned as a leading dermatologist and aesthetic specialist in
               Riyadh, Dr. Reham Hamed is trusted by patients from across the
               region for her expertise in achieving natural, refined, and
@@ -754,7 +762,7 @@
                 <img
                   src="images/herosection.png"
                   alt="Dr. Reham Hamed"
-                  class="w-full h-auto object-cover"
+                  class="object-cover w-full h-auto"
                   style="filter: grayscale(20%)"
                 />
               </div>
@@ -763,35 +771,35 @@
         </div>
 
         <!-- Statistics Section -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 fade-in-up">
+        <div class="grid grid-cols-2 gap-8 mt-20 lg:grid-cols-4 fade-in-up">
           <!-- Stat 1 -->
           <div class="text-center">
-            <div class="text-6xl font-light text-white mb-4">15+</div>
-            <div class="text-sm text-white/60 uppercase tracking-wider">
+            <div class="mb-4 text-6xl font-light text-white">15+</div>
+            <div class="text-sm tracking-wider uppercase text-white/60">
               Years in Business
             </div>
           </div>
 
           <!-- Stat 2 -->
           <div class="text-center">
-            <div class="text-6xl font-light text-white mb-4">25,000+</div>
-            <div class="text-sm text-white/60 uppercase tracking-wider">
+            <div class="mb-4 text-6xl font-light text-white">25,000+</div>
+            <div class="text-sm tracking-wider uppercase text-white/60">
               Coolsculpting Cycles
             </div>
           </div>
 
           <!-- Stat 3 -->
           <div class="text-center">
-            <div class="text-6xl font-light text-white mb-4">15,000+</div>
-            <div class="text-sm text-white/60 uppercase tracking-wider">
+            <div class="mb-4 text-6xl font-light text-white">15,000+</div>
+            <div class="text-sm tracking-wider uppercase text-white/60">
               Patients Cared For
             </div>
           </div>
 
           <!-- Stat 4 -->
           <div class="text-center">
-            <div class="text-6xl font-light text-white mb-4">100%</div>
-            <div class="text-sm text-white/60 uppercase tracking-wider">
+            <div class="mb-4 text-6xl font-light text-white">100%</div>
+            <div class="text-sm tracking-wider uppercase text-white/60">
               Professionalism & Love
             </div>
           </div>
@@ -800,18 +808,21 @@
     </section>
 
     <!-- BEFORE AND AFTER SECTION -->
-    <section class="relative bg-beige py-20 overflow-hidden" id="before-after">
+    <section
+      class="relative py-20 overflow-hidden before-after-bg"
+      id="before-after"
+    >
       <!-- Background Particles -->
       <div class="footer-particle"></div>
       <div class="footer-particle"></div>
       <div class="footer-particle"></div>
 
-      <div class="relative z-10 container mx-auto px-8 max-w-7xl">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="container relative z-10 px-8 mx-auto max-w-7xl">
+        <div class="grid items-center grid-cols-1 gap-16 lg:grid-cols-2">
           <!-- Left Side - Before/After Image Slider -->
           <div class="relative fade-in-up">
             <div
-              class="before-after-wrapper relative overflow-hidden rounded-lg shadow-2xl"
+              class="relative overflow-hidden rounded-lg shadow-2xl before-after-wrapper"
             >
               <!-- Before Image (Background - Right Side) -->
               <div class="before-after-image">
@@ -837,7 +848,7 @@
                 <div class="before-after-handle">
                   <!-- Left Arrow -->
                   <svg
-                    class="w-4 h-4 text-gold absolute left-3"
+                    class="absolute w-4 h-4 text-gold left-3"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="3"
@@ -851,7 +862,7 @@
                   </svg>
                   <!-- Right Arrow -->
                   <svg
-                    class="w-4 h-4 text-gold absolute right-3"
+                    class="absolute w-4 h-4 text-gold right-3"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="3"
@@ -892,11 +903,11 @@
               deserving the glowing canvass of your dreams.
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+            <div class="grid grid-cols-1 gap-4 mb-12 md:grid-cols-2">
               <div class="space-y-4">
                 <div class="flex items-center gap-3">
                   <svg
-                    class="w-5 h-5 text-gold flex-shrink-0"
+                    class="flex-shrink-0 w-5 h-5 text-gold"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -911,7 +922,7 @@
 
                 <div class="flex items-center gap-3">
                   <svg
-                    class="w-5 h-5 text-gold flex-shrink-0"
+                    class="flex-shrink-0 w-5 h-5 text-gold"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -926,7 +937,7 @@
 
                 <div class="flex items-center gap-3">
                   <svg
-                    class="w-5 h-5 text-gold flex-shrink-0"
+                    class="flex-shrink-0 w-5 h-5 text-gold"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -945,7 +956,7 @@
               <div class="space-y-4">
                 <div class="flex items-center gap-3">
                   <svg
-                    class="w-5 h-5 text-gold flex-shrink-0"
+                    class="flex-shrink-0 w-5 h-5 text-gold"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -960,7 +971,7 @@
 
                 <div class="flex items-center gap-3">
                   <svg
-                    class="w-5 h-5 text-gold flex-shrink-0"
+                    class="flex-shrink-0 w-5 h-5 text-gold"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -975,7 +986,7 @@
 
                 <div class="flex items-center gap-3">
                   <svg
-                    class="w-5 h-5 text-gold flex-shrink-0"
+                    class="flex-shrink-0 w-5 h-5 text-gold"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -1002,19 +1013,283 @@
       </div>
     </section>
 
+    <!-- BOOKING APPOINTMENT SECTION -->
+    <section
+      class="relative overflow-hidden bg-gradient-to-r from-black via-gray-900 to-[#3d2b1f]"
+      id="booking"
+    >
+      <!-- Background Particles -->
+      <div class="footer-particle"></div>
+      <div class="footer-particle"></div>
+      <div class="footer-particle"></div>
+
+      <div class="container relative z-10 px-8 max-w-7xl">
+        <div
+          class="grid items-center min-h-screen grid-cols-1 gap-16 min-w-screen lg:grid-cols-2"
+        >
+          <!-- Left Side - Booking Form -->
+          <div class="relative fade-in-up">
+            <!-- Badge -->
+            <div class="inline-block mb-6">
+              <span
+                class="px-6 py-2 bg-gold/20 text-gold text-xs uppercase tracking-[0.25rem] font-semibold border border-gold/30"
+              >
+                ENHANCE YOUR NATURAL GLOW
+              </span>
+            </div>
+
+            <!-- Title -->
+            <h2
+              class="mb-12 text-4xl font-light leading-tight text-white lg:text-5xl"
+            >
+              Take the next step and<br />
+              <span class="font-semibold">schedule an appointment today</span>
+            </h2>
+
+            <!-- Booking Form -->
+            <form class="space-y-6">
+              <!-- Row 1: Your Name & Your Email -->
+              <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <!-- Your Name -->
+                <div>
+                  <label
+                    class="block mb-3 text-sm font-semibold tracking-wider uppercase text-white/80"
+                  >
+                    YOUR NAME <span class="text-gold">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    required
+                    class="w-full px-6 py-4 bg-white border border-[#ddd] text-[#333] placeholder-[#999] focus:outline-none focus:border-gold transition-colors duration-300"
+                  />
+                </div>
+
+                <!-- Your Email -->
+                <div>
+                  <label
+                    class="block mb-3 text-sm font-semibold tracking-wider uppercase text-white/80"
+                  >
+                    YOUR EMAIL <span class="text-gold">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    required
+                    class="w-full px-6 py-4 bg-white border border-[#ddd] text-[#333] placeholder-[#999] focus:outline-none focus:border-gold transition-colors duration-300"
+                  />
+                </div>
+              </div>
+
+              <!-- Row 2: Your Phone & Treatment -->
+              <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <!-- Your Phone -->
+                <div>
+                  <label
+                    class="block mb-3 text-sm font-semibold tracking-wider uppercase text-white/80"
+                  >
+                    YOUR PHONE
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder="Your Phone"
+                    class="w-full px-6 py-4 bg-white border border-[#ddd] text-[#333] placeholder-[#999] focus:outline-none focus:border-gold transition-colors duration-300"
+                  />
+                </div>
+
+                <!-- Treatment -->
+                <div>
+                  <label
+                    class="block mb-3 text-sm font-semibold tracking-wider uppercase text-white/80"
+                  >
+                    TREATMENT <span class="text-gold">*</span>
+                  </label>
+                  <div class="relative">
+                    <select
+                      class="w-full px-6 py-4 bg-white border border-[#ddd] text-[#333] appearance-none focus:outline-none focus:border-gold transition-colors duration-300 cursor-pointer"
+                      required
+                    >
+                      <option value="">Select Treatment</option>
+                      <option value="facelift">Facelift</option>
+                      <option value="rhinoplasty">Rhinoplasty</option>
+                      <option value="mommy-makeover">Mommy Makeover</option>
+                      <option value="tummy-tuck">Tummy Tuck</option>
+                      <option value="liposuction">Liposuction</option>
+                      <option value="injectables">Injectables</option>
+                    </select>
+                    <svg
+                      class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#666] pointer-events-none"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 3: Date & Time -->
+              <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+                <!-- Date -->
+                <div class="md:col-span-1">
+                  <label
+                    class="block mb-3 text-sm font-semibold tracking-wider uppercase text-white/80"
+                  >
+                    DATE <span class="text-gold">*</span>
+                  </label>
+                  <div class="relative">
+                    <input
+                      type="date"
+                      class="w-full px-10 py-4 bg-white border border-[#ddd] text-[#333] focus:outline-none focus:border-gold transition-colors duration-300 cursor-pointer"
+                      required
+                    />
+                    <svg
+                      class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#666] pointer-events-none"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <rect
+                        x="3"
+                        y="4"
+                        width="18"
+                        height="18"
+                        rx="2"
+                        ry="2"
+                        stroke-width="2"
+                      />
+                      <line x1="16" y1="2" x2="16" y2="6" stroke-width="2" />
+                      <line x1="8" y1="2" x2="8" y2="6" stroke-width="2" />
+                      <line x1="3" y1="10" x2="21" y2="10" stroke-width="2" />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Time - 2 Dropdowns -->
+                <div class="grid grid-cols-2 gap-4 md:col-span-2">
+                  <div>
+                    <label
+                      class="block mb-3 text-sm font-semibold tracking-wider uppercase text-white/80"
+                    >
+                      TIME <span class="text-gold">*</span>
+                    </label>
+                    <div class="relative">
+                      <select
+                        class="w-full px-6 py-4 bg-white border border-[#ddd] text-[#333] appearance-none focus:outline-none focus:border-gold transition-colors duration-300 cursor-pointer"
+                        required
+                      >
+                        <option value="">Select</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                      </select>
+                      <svg
+                        class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#666] pointer-events-none"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      class="block mb-3 text-sm font-semibold tracking-wider uppercase text-white/80"
+                    >
+                      :
+                    </label>
+                    <div class="relative">
+                      <select
+                        class="w-full px-6 py-4 bg-white border border-[#ddd] text-[#333] appearance-none focus:outline-none focus:border-gold transition-colors duration-300 cursor-pointer"
+                        required
+                      >
+                        <option value="">Select</option>
+                        <option value="00">00</option>
+                        <option value="15">15</option>
+                        <option value="30">30</option>
+                        <option value="45">45</option>
+                      </select>
+                      <svg
+                        class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#666] pointer-events-none"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="pt-4">
+                <button
+                  type="submit"
+                  class="px-12 py-5 cursor-pointer bg-beige text-[#8b6b7a] uppercase tracking-[0.15rem] font-semibold transition-all duration-300 hover:bg-gold hover:text-white hover:-translate-y-1 hover:shadow-lg"
+                >
+                  MAKE AN APPOINTMENT
+                </button>
+              </div>
+            </form>
+            <!-- Success Message -->
+            <div
+              id="formMessage"
+              class="hidden mt-6 px-6 py-4 rounded-lg text-center text-white font-semibold tracking-wide bg-[#daa520] shadow-lg transition-all duration-500"
+            >
+              ✅ Appointment request sent successfully!
+            </div>
+          </div>
+
+          <!-- Right Side - Image -->
+          <div class="relative fade-in-up lg:order-last">
+            <img
+              src="images/booking-image.jpg"
+              alt="Booking Appointment"
+              class="object-cover min-h-screen"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FOOTER SECTION -->
-    <footer class="relative bg-beige py-20 overflow-hidden">
+    <footer class="relative py-20 overflow-hidden footer-bg-image">
       <!-- Decorative Background Particles -->
       <div class="footer-particle"></div>
       <div class="footer-particle"></div>
       <div class="footer-particle"></div>
 
       <!-- Main Footer Content -->
-      <div class="relative z-10 container mx-auto px-8 max-w-7xl">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-16 items-start">
+      <div class="container relative z-10 px-8 mx-auto max-w-7xl">
+        <div class="grid items-start grid-cols-1 gap-16 md:grid-cols-3">
           <!-- Address Section -->
           <div class="text-center md:text-left fade-in-up">
-            <h3 class="text-2xl font-light text-gold mb-8 tracking-wide">
+            <h3 class="mb-8 text-2xl font-light tracking-wide text-gold">
               Address
             </h3>
             <p class="text-[#666] leading-relaxed mb-4">Riyadh, Saudi Arabia</p>
@@ -1032,7 +1307,7 @@
             >
               <!-- Logo Circle -->
               <div
-                class="w-24 h-24 border-2 border-gold rounded-full flex items-center justify-center text-4xl text-gold font-bold italic logo-glow transition-transform duration-300 group-hover:scale-110"
+                class="flex items-center justify-center w-24 h-24 text-4xl italic font-bold transition-transform duration-300 border-2 rounded-full border-gold text-gold logo-glow group-hover:scale-110"
               >
                 DR
               </div>
@@ -1053,10 +1328,10 @@
 
           <!-- Contacts Section -->
           <div class="text-center md:text-right fade-in-up">
-            <h3 class="text-2xl font-light text-gold mb-8 tracking-wide">
+            <h3 class="mb-8 text-2xl font-light tracking-wide text-gold">
               Contacts
             </h3>
-            <div class="space-y-4 mb-8">
+            <div class="mb-8 space-y-4">
               <a
                 class="block text-[#666] hover:text-gold transition-colors duration-300 text-lg"
               >
@@ -1071,11 +1346,11 @@
             </div>
 
             <!-- Social Media Icons -->
-            <div class="flex gap-4 justify-center md:justify-end">
+            <div class="flex justify-center gap-4 md:justify-end">
               <a
                 href="https://www.tiktok.com/@dr.rehamhamed?is_from_webapp=1&sender_device=pc"
                 target="_blank"
-                class="social-icon w-12 h-12 rounded-full bg-gold/80 hover:bg-gold flex items-center justify-center text-white"
+                class="flex items-center justify-center w-12 h-12 text-white rounded-full social-icon bg-gold/80 hover:bg-gold"
                 aria-label="TikTok"
               >
                 <svg
@@ -1093,7 +1368,7 @@
               <a
                 href="https://www.instagram.com/dr.rehamhamed?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 target="_blank"
-                class="social-icon w-12 h-12 rounded-full bg-gold/80 hover:bg-gold flex items-center justify-center text-white"
+                class="flex items-center justify-center w-12 h-12 text-white rounded-full social-icon bg-gold/80 hover:bg-gold"
                 aria-label="Instagram"
               >
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -1105,7 +1380,7 @@
               <a
                 href="https://www.snapchat.com/@dr.rehamhamed?sender_web_id=7a6a49f5-d317-4e2f-a939-e459f41e0178&device_type=desktop&is_copy_url=true"
                 target="_blank"
-                class="social-icon w-12 h-12 rounded-full bg-gold/80 hover:bg-gold flex items-center justify-center text-white"
+                class="flex items-center justify-center w-12 h-12 text-white rounded-full social-icon bg-gold/80 hover:bg-gold"
                 aria-label="Snapchat"
               >
                 <svg
@@ -1127,7 +1402,7 @@
               <a
                 href="https://wa.me/966564746005"
                 target="_blank"
-                class="social-icon w-12 h-12 rounded-full bg-gold/80 hover:bg-gold flex items-center justify-center text-white"
+                class="flex items-center justify-center w-12 h-12 text-white rounded-full social-icon bg-gold/80 hover:bg-gold"
                 aria-label="WhatsApp"
               >
                 <svg
@@ -1157,7 +1432,7 @@
     <!-- Scroll to Top Button -->
     <button
       onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-      class="scroll-top-btn fixed bottom-8 right-8 w-14 h-14 bg-black hover:bg-gold text-white rounded-full flex items-center justify-center cursor-pointer z-50 shadow-lg opacity-0 pointer-events-none transition-opacity duration-300"
+      class="fixed z-50 flex items-center justify-center text-white transition-opacity duration-300 bg-black rounded-full shadow-lg opacity-0 cursor-pointer pointer-events-none scroll-top-btn bottom-8 right-8 w-14 h-14 hover:bg-gold"
       aria-label="Scroll to top"
     >
       <svg
