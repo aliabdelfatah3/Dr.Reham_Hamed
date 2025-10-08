@@ -264,3 +264,74 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3000);
   }
 });
+
+const testimonials = [
+  {
+    text: "I came across Dr. Simmons on my hunt for the perfect Doctor and I'm so glad I did. I was a little worried being he didn't have many pics on IG. I just followed my intuition and he delivered. Not only did he give me the body of my dreams, he listened to me answered all my questions through dm. He heard everything I had to say and gave me exactly what I wanted.",
+    name: "Cynthia K.",
+    procedure: "on Breast Augmentation",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
+  },
+  {
+    text: "Dr. Hamed is simply the best! From the initial consultation to the final result, everything was perfect. She took the time to understand exactly what I wanted and delivered results beyond my expectations. Her attention to detail and genuine care for her patients is remarkable.",
+    name: "Sarah M.",
+    procedure: "on Rhinoplasty",
+    image:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop",
+  },
+  {
+    text: "I cannot recommend Dr. Hamed enough! The entire experience was wonderful. The staff was professional and caring, and the results speak for themselves. I finally feel confident in my own skin. Thank you for changing my life!",
+    name: "Jennifer L.",
+    procedure: "on Liposuction",
+    image:
+      "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=200&h=200&fit=crop",
+  },
+];
+
+const content = document.getElementById("testimonialContent");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+function updateTestimonial(index) {
+  const testimonial = testimonials[index];
+
+  content.style.opacity = "0";
+  content.style.transform = "translateY(20px)";
+
+  setTimeout(() => {
+    content.innerHTML = `
+                    <p class="text-2xl font-light italic leading-relaxed text-center text-[#666] mb-12">
+                        ${testimonial.text}
+                    </p>
+                    <div class="flex flex-col items-center">
+                        <div class="w-24 h-24 mb-6 overflow-hidden rounded-full">
+                            <img src="${testimonial.image}" alt="${testimonial.name}" class="object-cover w-full h-full">
+                        </div>
+                        <h4 class="text-2xl font-semibold text-[#333] mb-2">${testimonial.name}</h4>
+                        <p class="text-base text-[#999]">${testimonial.procedure}</p>
+                    </div>
+                `;
+
+    setTimeout(() => {
+      content.style.opacity = "1";
+      content.style.transform = "translateY(0)";
+    }, 50);
+  }, 300);
+}
+
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+  updateTestimonial(currentIndex);
+});
+
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % testimonials.length;
+  updateTestimonial(currentIndex);
+});
+
+// Auto-slide every 8 seconds
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % testimonials.length;
+  updateTestimonial(currentIndex);
+}, 8000);
