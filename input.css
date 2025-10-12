@@ -627,3 +627,32 @@ button {
     height: 300px;
   }
 }
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .desktop-nav {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .social-icon {
+  transform: scaleX(-1);
+}
+
+.lang-btn.active {
+  background-color: rgba(218, 165, 32, 0.2);
+  border-color: #daa520;
+  color: #daa520;
+}
+
+/* Mobile Language Switcher */
+@media (max-width: 1024px) {
+  .mobile-lang-switcher {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-top: 1px solid rgba(218, 165, 32, 0.3);
+  }
+}

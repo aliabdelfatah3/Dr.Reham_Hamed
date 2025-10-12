@@ -626,3 +626,82 @@ function showToast(message, type) {
     }, 500);
   }, 3000);
 }
+
+// ============================================
+// LANGUAGE SWITCHER
+// ============================================
+
+// Get current language from localStorage or default to English
+let currentLang = localStorage.getItem("language") || "en";
+
+// Initialize language on page load
+document.addEventListener("DOMContentLoaded", () => {
+  applyLanguage(currentLang);
+});
+
+// Function to change language
+function changeLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem("language", lang);
+  applyLanguage(lang);
+
+  // Update button states
+  updateLanguageButtons(lang);
+}
+
+// Function to apply language to all elements
+function applyLanguage(lang) {
+  // Set HTML attributes
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+  // Update all elements with data-i18n attribute
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const key = element.getAttribute("data-i18n");
+    if (translations[lang] && translations[lang][key]) {
+      // Check if element is input placeholder
+      if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
+        element.placeholder = translations[lang][key];
+      } else {
+        element.textContent = translations[lang][key];
+      }
+    }
+  });
+
+  // Update body class for RTL/LTR specific styles
+  if (lang === "ar") {
+    document.body.classList.add("rtl");
+    document.body.classList.remove("ltr");
+  } else {
+    document.body.classList.add("ltr");
+    document.body.classList.remove("rtl");
+  }
+
+  // Update select options if needed
+  updateSelectOptions(lang);
+}
+
+// Function to update select dropdown options
+function updateSelectOptions(lang) {
+  const treatmentSelects = document.querySelectorAll("select");
+  treatmentSelects.forEach((select) => {
+    if (select.querySelector('option[value=""]')) {
+      const firstOption = select.querySelector('option[value=""]');
+      firstOption.textContent = translations[lang].selectTreatment;
+    }
+  });
+}
+
+// Function to update language button states
+function updateLanguageButtons(lang) {
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    if (btn.dataset.lang === lang) {
+      btn.classList.add("active");
+    } else {
+      btn.classList.remove("active");
+    }
+  });
+}
+
+// Expose changeLanguage function globally
+window.changeLanguage = changeLanguage;
