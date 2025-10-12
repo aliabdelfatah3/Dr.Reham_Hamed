@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
+      integrity="sha384-5Gd6ZmB6QA0NMG3rwo87IgmzZa+kx0nklBS6vGG/ahHJMsRHi2e19nvMsB3zkL3O"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
+      as="script"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
+      defer
+    ></script>
+
+    <link
+      rel="preload"
+      href="/input.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="/input.css" /></noscript>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-gold: #daa520;
+        --color-brown: #8b4513;
+        --color-beige: #f5f1e8;
+        --color-dark-blue: #2c3e50;
+      }
+    </style>    
+  </head>
+  <body>
+    <!-- HEADER SECTION -->
+    <header
+      class="absolute top-0 left-0 right-0 z-[1000] px-4 md:px-8 lg:px-16 py-4 md:py-6 flex flex-col transition-all duration-500 ease-in-out"
+      id="mainHeader"
+    >
+      <div class="flex flex-row items-center justify-between w-full">
+        <!-- Contact Information - Hidden on mobile -->
+        <div class="flex-col items-center hidden lg:flex">
+          <div
+            class="flex items-center cursor-default gap-2 text-white no-underline text-xs lg:text-sm transition-all duration-300 px-3 lg:px-4 py-2 rounded-full hover:text-[#DAA520] hover:bg-[#DAA520]/10 hover:-translate-y-0.5"
+          >
+            <svg
+              class="w-4 h-4 lg:w-[18px] lg:h-[18px]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              ></path>
+            </svg>
+            <span class="whitespace-nowrap">+966 56 474 6005</span>
+          </div>
+          <a
+            href="contactus.html"
+            class="flex items-center gap-2 text-white no-underline text-xs lg:text-sm transition-all duration-300 px-3 lg:px-4 py-2 rounded-full hover:text-[#DAA520] hover:bg-[#DAA520]/10 hover:-translate-y-0.5"
+          >
+            <svg
+              class="w-4 h-4 lg:w-[18px] lg:h-[18px]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span class="whitespace-nowrap">OUR LOCATIONS</span>
+          </a>
+        </div>
+
+        <!-- Logo - Centered on mobile -->
+        <a
+          href="/"
+          class="flex items-center gap-2 no-underline md:gap-3 lg:gap-4 lg:absolute lg:-translate-x-1/2 lg:left-1/2"
+        >
+          <div
+            class="w-[35px] h-[35px] md:w-[45px] md:h-[45px] lg:w-[50px] lg:h-[50px] border-2 border-[#DAA520] rounded-full flex items-center justify-center text-lg md:text-xl lg:text-2xl text-[#DAA520] font-bold italic logo-glow"
+          >
+            DR
+          </div>
+          <div
+            class="text-lg md:text-2xl lg:text-3xl font-light tracking-[0.2rem] md:tracking-[0.25rem] lg:tracking-[0.3rem] text-white uppercase"
+          >
+            Reham Hamed
+          </div>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button
+          id="mobileMenuBtn"
+          class="p-2 text-white bg-transparent border-none cursor-pointer lg:hidden"
+          aria-label="Toggle menu"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- CTA Button - Hidden on mobile, shown in menu -->
+        <a href="booking.html" class="hidden lg:block">
+          <button
+            class="px-6 lg:px-8 py-2.5 lg:py-3 bg-transparent border-2 border-[#DAA520] text-white uppercase tracking-wider cursor-pointer transition-all duration-[400ms] ease-in-out text-xs lg:text-sm font-semibold relative overflow-hidden hover:bg-[#DAA520] hover:text-black hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(218,165,32,0.4)]"
+          >
+            Book a Visit
+          </button>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation Menu -->
+      <nav
+        class="items-center justify-center hidden gap-6 mt-4 desktop-nav lg:flex lg:gap-10"
+      >
+        <a
+          href="/"
+          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
+          >Home</a
+        >
+        <a
+          href="services.html"
+          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
+          >Services</a
+        >
+        <a
+          href="aboutus.html"
+          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
+          >About us</a
+        >
+        <a
+          href="videos.html"
+          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
+          >Videos</a
+        >
+        <a
+          href="blogs.html"
+          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
+          >Blogs</a
+        >
+        <a
+          href="contactus.html"
+          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
+          >Contact us</a
+        >
+      </nav>
+      <!-- Mobile Menu Overlay -->
+      <div
+        id="mobileMenuOverlay"
+        class="mobile-menu hidden fixed top-0 left-0 w-full h-full bg-black/50 z-[1001] lg:hidden backdrop-blur-sm"
+      >
+        <div
+          id="mobileMenu"
+          class="absolute top-0 right-0 w-80 max-w-[85vw] md:w-80 h-full bg-gradient-to-br from-[#0a0a0a] to-[#1a1a2e] shadow-2xl transform translate-x-full transition-transform duration-300 overflow-y-auto flex flex-col p-6"
+        >
+          <!-- Close Button -->
+          <button id="closeMobileMenu" class="self-end p-2 mb-8 text-white">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+
+          <!-- Mobile Navigation Links -->
+          <nav class="flex flex-col gap-6 mb-8">
+            <a
+              href="/"
+              class="text-white text-lg uppercase tracking-wider py-3 border-b border-[#DAA520]/30 transition-colors hover:text-[#DAA520]"
+              >Home</a
+            >
+            <a
+              href="services.html"
+              class="text-white text-lg uppercase tracking-wider py-3 border-b border-[#DAA520]/30 transition-colors hover:text-[#DAA520]"
+              >Services</a
+            >
+            <a
+              href="aboutus.html"
+              class="text-white text-lg uppercase tracking-wider py-3 border-b border-[#DAA520]/30 transition-colors hover:text-[#DAA520]"
+              >About us</a
+            >
+            <a
+              href="videos.html"
+              class="text-white text-lg uppercase tracking-wider py-3 border-b border-[#DAA520]/30 transition-colors hover:text-[#DAA520]"
+              >Videos</a
+            >
+            <a
+              href="blogs.html"
+              class="text-white text-lg uppercase tracking-wider py-3 border-b border-[#DAA520]/30 transition-colors hover:text-[#DAA520]"
+              >Blogs</a
+            >
+            <a
+              href="contactus.html"
+              class="text-white text-lg uppercase tracking-wider py-3 border-b border-[#DAA520]/30 transition-colors hover:text-[#DAA520]"
+              >Contact us</a
+            >
+          </nav>
+
+          <!-- Mobile Contact Info -->
+          <div class="flex flex-col gap-4 mb-8">
+            <div class="flex items-center gap-2 text-sm text-white">
+              <svg
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                ></path>
+              </svg>
+              <span>+966 56 474 6005</span>
+            </div>
+            <a
+              href="contactus.html"
+              class="flex items-center gap-2 text-sm text-white"
+            >
+              <svg
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>OUR LOCATIONS</span>
+            </a>
+          </div>
+
+          <!-- Mobile CTA Button -->
+          <a href="booking.html" class="mt-auto">
+            <button
+              class="w-full px-6 py-3 bg-gradient-to-br from-[#DAA520] to-[#8B4513] border-2 border-[#DAA520] text-white uppercase tracking-wider font-semibold rounded-lg"
+            >
+              Book a Visit
+            </button>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section
+      class="relative flex flex-col min-h-screen overflow-hidden"
+      id="heroSection"
+    >
+      <!-- Background Layers -->
+      <div class="absolute inset-0 z-[1]">
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] to-[#1a1a2e]"
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-[#8B4513]/30 via-[#DAA520]/20 to-black/80 gradient-shift"
+        ></div>
+        <div class="absolute inset-0">
+          <div
+            class="particle absolute w-[200px] h-[200px] md:w-[300px] md:h-[300px] top-[10%] left-[10%] md:left-[20%] rounded-full bg-[radial-gradient(circle,rgba(218,165,32,0.8)_0%,transparent_70%)]"
+          ></div>
+          <div
+            class="particle absolute w-[150px] h-[150px] md:w-[200px] md:h-[200px] top-[60%] right-[10%] md:right-[15%] rounded-full bg-[radial-gradient(circle,rgba(218,165,32,0.8)_0%,transparent_70%)]"
+          ></div>
+          <div
+            class="particle absolute w-[100px] h-[100px] md:w-[150px] md:h-[150px] bottom-[20%] left-1/2 rounded-full bg-[radial-gradient(circle,rgba(218,165,32,0.8)_0%,transparent_70%)]"
+          ></div>
+        </div>
+        <div
+          class="absolute inset-0 bg-top bg-no-repeat hero-bg-image opacity-60"
+        ></div>
+      </div>
+
+      <!-- Main Content -->
+      <div
+        class="relative z-10 flex flex-col items-start justify-end flex-1 px-6 pb-24 text-left md:px-12 lg:px-24 xl:px-36 md:pb-32 lg:pb-44"
+      >
+        <div>
+          <h1
+            class="text-3xl md:text-4xl lg:text-5xl xl:text-[3rem] font-light text-white leading-tight tracking-wider uppercase opacity-0 fade-in-up"
+          >
+            FEEL YOUR BEST
+            <span class="block font-semibold shimmer-text">LOOK YOUR BEST</span>
+          </h1>
+          <p
+            class="text-base md:text-lg lg:text-xl text-white/80 mb-8 md:mb-10 lg:mb-12 max-w-full md:max-w-[450px] lg:max-w-[500px] leading-relaxed fade-in-up-delay-1"
+          >
+            The leading destination for dermatology and aesthetic treatments in
+            Riyadh.
+          </p>
+          <div
+            class="flex flex-col gap-4 sm:flex-row md:gap-5 fade-in-up-delay-2"
+          >
+            <a href="#booking" class="w-full sm:w-auto">
+              <button
+                class="w-full sm:w-auto px-6 md:px-8 lg:px-10 py-4 md:py-5 text-sm md:text-base uppercase tracking-[0.15rem] cursor-pointer transition-all duration-[400ms] ease-in-out border-2 border-[#DAA520] relative overflow-hidden font-semibold bg-gradient-to-br from-[#DAA520] to-[#8B4513] text-white shadow-[0_10px_40px_rgba(218,165,32,0.3)] hover:-translate-y-1.5 hover:shadow-[0_15px_50px_rgba(218,165,32,0.5)]"
+              >
+                <span class="relative z-[1]">Book Consultation</span>
+              </button>
+            </a>
+            <a href="#services" class="w-full sm:w-auto">
+              <button
+                class="w-full sm:w-auto px-6 md:px-8 lg:px-10 py-4 md:py-5 text-sm md:text-base uppercase tracking-[0.15rem] cursor-pointer transition-all duration-[400ms] ease-in-out bg-transparent border-2 border-white text-white relative overflow-hidden font-semibold hover:bg-white hover:text-black hover:-translate-y-1.5 hover:shadow-[0_15px_50px_rgba(255,255,255,0.2)]"
+              >
+                <span class="relative z-[1]">Find Your Procedure</span>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services Bar -->
+      <div class="relative z-10 py-6 services-bar-wrapper md:py-8">
+        <div class="services-bar-content" id="servicesBar">
+          <div
+            class="flex items-center gap-1.5 text-white uppercase text-xs md:text-sm tracking-wider transition-all duration-300 cursor-default px-4 md:px-6 py-2 rounded-full no-underline whitespace-nowrap"
+          >
+            <svg
+              class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="7"></circle>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            <span>Facelift</span>
+          </div>
+          <div
+            class="flex items-center gap-1.5 text-white uppercase text-xs md:text-sm tracking-wider transition-all duration-300 cursor-default px-4 md:px-6 py-2 rounded-full no-underline whitespace-nowrap"
+          >
+            <svg
+              class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="7"></circle>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            <span>Rhinoplasty</span>
+          </div>
+          <div
+            class="flex items-center gap-1.5 text-white uppercase text-xs md:text-sm tracking-wider transition-all duration-300 cursor-default px-4 md:px-6 py-2 rounded-full no-underline whitespace-nowrap"
+          >
+            <svg
+              class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="7"></circle>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            <span>Mommy Makeover</span>
+          </div>
+          <div
+            class="flex items-center gap-1.5 text-white uppercase text-xs md:text-sm tracking-wider transition-all duration-300 cursor-default px-4 md:px-6 py-2 rounded-full no-underline whitespace-nowrap"
+          >
+            <svg
+              class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="7"></circle>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            <span>Tummy Tuck</span>
+          </div>
+          <div
+            class="flex items-center gap-1.5 text-white uppercase text-xs md:text-sm tracking-wider transition-all duration-300 cursor-default px-4 md:px-6 py-2 rounded-full no-underline whitespace-nowrap"
+          >
+            <svg
+              class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="7"></circle>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            <span>Liposuction</span>
+          </div>
+          <div
+            class="flex items-center gap-1.5 text-white uppercase text-xs md:text-sm tracking-wider transition-all duration-300 cursor-default px-4 md:px-6 py-2 rounded-full no-underline whitespace-nowrap"
+          >
+            <svg
+              class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="7"></circle>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            <span>Injectables</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section class="relative py-20 overflow-hidden bg-white" id="blog">
+      <!-- Background Particles -->
+      <div class="footer-particle"></div>
+      <div class="footer-particle"></div>
+      <div class="footer-particle"></div>
+
+      <div class="container relative z-10 px-8 mx-auto max-w-7xl">
+        <!-- Section Title -->
+        <div class="mb-16 text-center">
+          <h2
+            class="text-4xl font-light tracking-wider text-[#333] md:text-5xl"
+          >
+            From the Blog
+          </h2>
+        </div>
+
+        <!-- Blog Cards Grid -->
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Blog Card 1 -->
+          <article
+            class="overflow-hidden transition-all duration-300 bg-white shadow-lg group rounded-3xl hover:shadow-2xl hover:-translate-y-2"
+          >
+            <!-- Image -->
+            <div class="relative overflow-hidden h-80">
+              <img
+                src="images/blog1.jpg"
+                alt="5 Tips on How to Look Younger than Your Age"
+                loading="lazy"
+                class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+              />
+            </div>
+
+            <!-- Content -->
+            <div class="p-8">
+              <!-- Category Badge -->
+              <span
+                class="inline-block px-4 py-1 mb-4 text-xs font-semibold tracking-widest uppercase text-[#999] bg-gray-100"
+              >
+                AESTHETICS
+              </span>
+
+              <!-- Title -->
+              <h3
+                class="mb-6 text-2xl font-light leading-tight text-[#333] transition-colors duration-300 group-hover:text-gold"
+              >
+                5 Tips on How to Look Younger than Your Age
+              </h3>
+
+              <!-- Read More Link -->
+
+              <a
+                href="#blog-post-1"
+                class="inline-flex items-center gap-2 text-sm font-bold tracking-widest uppercase transition-all duration-300 text-[#333] group-hover:text-gold group-hover:gap-4"
+              >
+                READ MORE
+                <svg
+                  class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Blog Card 2 -->
+          <article
+            class="overflow-hidden transition-all duration-300 bg-white shadow-lg group rounded-3xl hover:shadow-2xl hover:-translate-y-2"
+          >
+            <!-- Image -->
+            <div class="relative overflow-hidden h-80">
+              <img
+                src="images/blog2.jpg"
+                alt="How To Care For Your Skin After Aesthetic Procedures"
+                loading="lazy"
+                class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+              />
+            </div>
+
+            <!-- Content -->
+            <div class="p-8">
+              <!-- Category Badge -->
+              <span
+                class="inline-block px-4 py-1 mb-4 text-xs font-semibold tracking-widest uppercase text-[#999] bg-gray-100"
+              >
+                NEWS
+              </span>
+
+              <!-- Title -->
+              <h3
+                class="mb-6 text-2xl font-light leading-tight text-[#333] transition-colors duration-300 group-hover:text-gold"
+              >
+                How To Care For Your Skin After Aesthetic Procedures
+              </h3>
+
+              <!-- Read More Link -->
+
+              <a
+                href="#blog-post-2"
+                class="inline-flex items-center gap-2 text-sm font-bold tracking-widest uppercase transition-all duration-300 text-[#333] group-hover:text-gold group-hover:gap-4"
+              >
+                READ MORE
+                <svg
+                  class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Blog Card 3 -->
+          <article
+            class="overflow-hidden transition-all duration-300 bg-white shadow-lg group rounded-3xl hover:shadow-2xl hover:-translate-y-2"
+          >
+            <!-- Image -->
+            <div class="relative overflow-hidden h-80">
+              <img
+                src="images/blog3.jpg"
+                alt="Lip Fillers: the Best Drugs and Brands"
+                loading="lazy"
+                class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+              />
+            </div>
+
+            <!-- Content -->
+            <div class="p-8">
+              <!-- Category Badge -->
+              <span
+                class="inline-block px-4 py-1 mb-4 text-xs font-semibold tracking-widest uppercase text-[#999] bg-gray-100"
+              >
+                TIPS
+              </span>
+
+              <!-- Title -->
+              <h3
+                class="mb-6 text-2xl font-light leading-tight text-[#333] transition-colors duration-300 group-hover:text-gold"
+              >
+                Lip Fillers: the Best Drugs and Brands
+              </h3>
+
+              <!-- Read More Link -->
+
+              <a
+                href="#blog-post-3"
+                class="inline-flex items-center gap-2 text-sm font-bold tracking-widest uppercase transition-all duration-300 text-[#333] group-hover:text-gold group-hover:gap-4"
+              >
+                READ MORE
+                <svg
+                  class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- View More Button -->
+        <div class="mt-16 text-center">
+          <a href="#all-posts">
+            <button
+              class="px-12 py-4 bg-dark-blue cursor-pointer text-white uppercase tracking-[0.15rem] font-semibold transition-all duration-300 hover:bg-gold hover:-translate-y-1 hover:shadow-lg"
+            >
+              VIEW MORE POSTS
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="relative pt-20 pb-8 overflow-hidden footer-bg-image">
+      <!-- Decorative Background Particles -->
+      <div class="footer-particle"></div>
+      <div class="footer-particle"></div>
+      <div class="footer-particle"></div>
+
+      <!-- Main Footer Content -->
+      <div class="container relative z-10 px-8 mx-auto max-w-7xl">
+        <div class="grid items-start grid-cols-1 gap-16 md:grid-cols-3">
+          <!-- Address Section -->
+          <div class="text-center md:text-left fade-in-up">
+            <h3 class="mb-8 text-2xl font-light tracking-wide text-gold">
+              Address
+            </h3>
+            <p class="text-[#666] leading-relaxed mb-4">Riyadh, Saudi Arabia</p>
+            <p class="text-[#666] leading-relaxed mb-4">Mon-Fri: 9am – 5pm</p>
+          </div>
+
+          <!-- Center Logo Section -->
+          <div class="flex flex-col items-center justify-center fade-in-up">
+            <a
+              href="/"
+              class="flex flex-col items-center gap-6 no-underline group"
+            >
+              <!-- Logo Circle -->
+              <div
+                class="flex items-center justify-center w-24 h-24 text-4xl italic font-bold transition-transform duration-300 border-2 rounded-full border-gold text-gold logo-glow group-hover:scale-110"
+              >
+                DR
+              </div>
+
+              <!-- Brand Name -->
+              <div class="text-center">
+                <div
+                  class="text-4xl font-light tracking-[0.3rem] text-[#333] uppercase mb-2"
+                >
+                  Reham Hamed
+                </div>
+                <div class="text-sm text-[#999] tracking-[0.2rem] uppercase">
+                  Dermatology, Laser & Aesthetic Medicine
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Contacts Section -->
+          <div class="text-center md:text-right fade-in-up">
+            <h3 class="mb-8 text-2xl font-light tracking-wide text-gold">
+              Contacts
+            </h3>
+            <div class="mb-8 space-y-4">
+              <a
+                class="block text-[#666] cursor-default hover:text-gold transition-colors duration-300 text-lg"
+              >
+                +966 56 474 6005
+              </a>
+              <a
+                href="mailto:clinic@example.com"
+                class="block text-[#666] hover:text-gold transition-colors duration-300"
+              >
+                rehamhamid@example.com
+              </a>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="flex justify-center gap-4 md:justify-end">
+              <a
+                href="https://www.tiktok.com/@dr.rehamhamed?is_from_webapp=1&sender_device=pc"
+                target="_blank"
+                class="flex items-center justify-center w-12 h-12 text-white rounded-full social-icon bg-gold/80 hover:bg-gold"
+                aria-label="TikTok"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12.18 2h3.09a4.84 4.84 0 0 0 4.84 4.84v3.09a7.9 7.9 0 0 1-4.83-1.62v6.74a6.28 6.28 0 1 1-6.28-6.28h.77v3.18a3.1 3.1 0 1 0 2.21 2.98V2z"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href="https://www.instagram.com/dr.rehamhamed?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                class="flex items-center justify-center w-12 h-12 text-white rounded-full social-icon bg-gold/80 hover:bg-gold"
+                aria-label="Instagram"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.snapchat.com/@dr.rehamhamed?sender_web_id=7a6a49f5-d317-4e2f-a939-e459f41e0178&device_type=desktop&is_copy_url=true"
+                target="_blank"
+                class="flex items-center justify-center w-12 h-12 text-white rounded-full social-icon bg-gold/80 hover:bg-gold"
+                aria-label="Snapchat"
+              >
+                <svg
+                  class="text-white"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  version="1.1"
+                  id="mdi-snapchat"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M21.93 16.56C21.79 16.18 21.5 16 21.22 15.81C21.17 15.78 21.11 15.75 21.07 15.73C21 15.68 20.89 15.64 20.8 15.59C19.86 15.09 19.12 14.46 18.61 13.72C18.47 13.5 18.35 13.29 18.24 13.06C18.2 12.93 18.2 12.86 18.23 12.8C18.26 12.75 18.3 12.7 18.35 12.67C18.5 12.56 18.68 12.46 18.79 12.38C19 12.25 19.15 12.15 19.25 12.08C19.64 11.81 19.91 11.5 20.08 11.2C20.32 10.75 20.35 10.22 20.16 9.75C19.91 9.08 19.27 8.66 18.5 8.66C18.34 8.66 18.18 8.68 18 8.71C18 8.72 17.94 8.73 17.9 8.74C17.9 8.28 17.89 7.8 17.85 7.32C17.71 5.64 17.12 4.76 16.5 4.06C16.11 3.62 15.65 3.24 15.14 2.95C14.21 2.42 13.15 2.15 12 2.15S9.8 2.42 8.87 2.95C8.35 3.24 7.89 3.62 7.5 4.06C6.88 4.76 6.3 5.64 6.15 7.32C6.11 7.8 6.1 8.28 6.11 8.74C6.06 8.73 6 8.72 6 8.71C5.82 8.68 5.66 8.66 5.5 8.66C4.73 8.66 4.09 9.08 3.84 9.75C3.65 10.22 3.68 10.75 3.92 11.2C4.09 11.5 4.36 11.81 4.75 12.08C4.85 12.15 5 12.25 5.21 12.39L5.63 12.66C5.69 12.7 5.73 12.75 5.77 12.8C5.8 12.87 5.8 12.94 5.75 13.07C5.65 13.3 5.53 13.5 5.39 13.72C4.89 14.45 4.18 15.07 3.27 15.56C2.78 15.82 2.28 16 2.07 16.56C1.91 17 2 17.5 2.42 17.91C2.57 18.06 2.74 18.19 2.93 18.29C3.33 18.5 3.75 18.68 4.18 18.79C4.27 18.82 4.36 18.85 4.43 18.91C4.58 19.03 4.56 19.23 4.76 19.5C4.86 19.66 5 19.79 5.13 19.89C5.54 20.18 6 20.19 6.5 20.21C6.94 20.23 7.44 20.25 8 20.44C8.26 20.5 8.5 20.67 8.79 20.85C9.5 21.27 10.42 21.85 12 21.85C13.57 21.85 14.5 21.27 15.22 20.84C15.5 20.67 15.75 20.5 16 20.44C16.55 20.25 17.06 20.23 17.5 20.21C18 20.2 18.46 20.18 18.87 19.89C19.04 19.77 19.18 19.61 19.29 19.43C19.43 19.19 19.43 19 19.56 18.91C19.63 18.86 19.71 18.82 19.8 18.8C20.24 18.68 20.66 18.5 21.06 18.29C21.27 18.18 21.45 18.04 21.6 17.87L21.61 17.87C22 17.46 22.08 17 21.93 16.56M20.53 17.31C19.67 17.78 19.1 17.73 18.66 18C18.5 18.12 18.45 18.28 18.42 18.44C18.41 18.5 18.4 18.58 18.39 18.64C18.37 18.78 18.34 18.9 18.24 18.97C17.9 19.2 16.91 18.95 15.63 19.37C14.57 19.72 13.9 20.73 12 20.73C10.1 20.73 9.45 19.73 8.37 19.37C7.1 18.95 6.1 19.2 5.77 18.97C5.5 18.78 5.72 18.26 5.34 18C4.9 17.73 4.33 17.78 3.5 17.31C3.19 17.15 3.14 17 3.18 16.93C3.22 16.84 3.34 16.77 3.42 16.73C5.07 15.94 6 14.91 6.47 14.1C6.91 13.38 7 12.83 7.03 12.75C7.06 12.54 7.09 12.38 6.86 12.17C6.64 11.96 5.66 11.36 5.39 11.17C4.93 10.85 4.74 10.54 4.88 10.15L4.88 10.15V10.15C5 9.88 5.23 9.78 5.5 9.78C5.58 9.78 5.66 9.79 5.74 9.81C6.24 9.91 6.72 10.16 7 10.23C7.03 10.24 7.06 10.24 7.1 10.24C7.19 10.24 7.24 10.21 7.27 10.15C7.28 10.11 7.29 10.06 7.29 10C7.25 9.46 7.18 8.41 7.26 7.42C7.3 7 7.37 6.64 7.46 6.33C7.66 5.65 8 5.2 8.34 4.79C8.59 4.5 9.75 3.27 12 3.27C13.85 3.27 14.96 4.11 15.44 4.56C15.54 4.66 15.62 4.74 15.66 4.79C16.04 5.23 16.38 5.71 16.58 6.47C16.65 6.74 16.71 7.06 16.74 7.42C16.82 8.4 16.75 9.46 16.71 10C16.71 10.04 16.71 10.08 16.72 10.11C16.73 10.2 16.79 10.24 16.9 10.24C16.94 10.24 16.97 10.24 17 10.23C17.28 10.16 17.76 9.91 18.26 9.8C18.34 9.79 18.42 9.78 18.5 9.78C18.75 9.78 19 9.87 19.1 10.1L19.11 10.14L19.12 10.14L19.12 10.15C19.27 10.53 19.07 10.85 18.62 11.16C18.35 11.35 17.36 11.96 17.14 12.16C16.91 12.38 16.94 12.54 16.97 12.75C17 12.85 17.18 13.8 18.08 14.86C18.63 15.5 19.42 16.17 20.58 16.73C20.65 16.76 20.74 16.81 20.79 16.87C20.82 16.92 20.84 16.96 20.83 17C20.82 17.1 20.73 17.2 20.53 17.31Z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/966564746005"
+                target="_blank"
+                class="flex items-center justify-center w-12 h-12 text-white rounded-full social-icon bg-gold/80 hover:bg-gold"
+                aria-label="WhatsApp"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 32 32"
+                >
+                  <path
+                    d="M16.003 3.003c-7.167 0-12.997 5.83-12.997 12.997 0 2.293.597 4.533 1.737 6.507L3 29l6.676-1.742a12.94 12.94 0 0 0 6.327 1.64h.003c7.164 0 12.994-5.83 12.994-12.997 0-3.472-1.352-6.736-3.808-9.192A12.93 12.93 0 0 0 16.003 3zm0 23.86a10.8 10.8 0 0 1-5.52-1.516l-.395-.234-3.963 1.035 1.06-3.866-.258-.398a10.79 10.79 0 0 1-1.642-5.78c0-5.958 4.848-10.806 10.82-10.806 2.893 0 5.61 1.127 7.66 3.175a10.75 10.75 0 0 1 3.16 7.632c0 5.974-4.849 10.858-10.823 10.858zm6.023-8.124c-.33-.166-1.952-.96-2.256-1.07-.304-.111-.526-.166-.749.166s-.86 1.07-1.055 1.294c-.195.222-.389.25-.72.084-.33-.166-1.392-.512-2.65-1.63-.979-.873-1.64-1.95-1.832-2.28-.195-.333-.02-.512.146-.678.151-.15.33-.389.497-.583.165-.195.22-.333.33-.555.11-.222.055-.416-.028-.583-.083-.166-.749-1.808-1.028-2.478-.27-.648-.547-.561-.749-.572l-.638-.011c-.194 0-.526.077-.804.389s-1.055 1.033-1.055 2.517c0 1.484 1.079 2.916 1.23 3.122.152.195 2.124 3.24 5.147 4.546.719.31 1.28.494 1.717.633.721.229 1.376.197 1.893.12.577-.086 1.952-.797 2.228-1.568.276-.77.276-1.43.193-1.568-.083-.139-.304-.222-.638-.389z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="mt-20 pt-8 border-t border-[#ddd] text-center">
+          <p class="text-[#999] text-sm">
+            © 2025 Dr. Reham Hamed – All Rights Reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button
+      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+      class="fixed z-50 flex items-center justify-center text-white transition-opacity duration-300 bg-black rounded-full shadow-lg opacity-0 cursor-pointer pointer-events-none scroll-top-btn bottom-8 right-8 w-14 h-14 hover:bg-gold"
+      aria-label="Scroll to top"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M5 15l7-7 7 7"
+        ></path>
+      </svg>
+    </button>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
