@@ -602,6 +602,7 @@ function showToast(message, type) {
 document.addEventListener("DOMContentLoaded", () => {
   applyLanguage(currentLang);
   updateServicesBar(currentLang);
+  updateLanguageButtons(currentLang);
 });
 
 // Function to change language
@@ -630,6 +631,12 @@ function applyLanguage(lang) {
   // Set HTML attributes
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+  // ✅ ضبط اتجاه الحقول (inputs / textarea)
+  document.querySelectorAll("input, textarea").forEach((el) => {
+    el.style.textAlign = lang === "ar" ? "right" : "left";
+    el.style.direction = lang === "ar" ? "rtl" : "ltr";
+  });
 
   // Update all elements with data-i18n attribute
   document.querySelectorAll("[data-i18n]").forEach((element) => {
@@ -696,9 +703,11 @@ function updateSelectOptions(lang) {
 function updateLanguageButtons(lang) {
   document.querySelectorAll(".lang-btn").forEach((btn) => {
     if (btn.dataset.lang === lang) {
-      btn.classList.add("active");
+      // اخفي الزرار الخاص باللغة الحالية
+      btn.style.display = "none";
     } else {
-      btn.classList.remove("active");
+      // اظهر الزرار التاني
+      btn.style.display = "inline-block";
     }
   });
 }
