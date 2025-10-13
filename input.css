@@ -656,3 +656,117 @@ button {
     border-top: 1px solid rgba(218, 165, 32, 0.3);
   }
 }
+
+/* English (LTR) - Arrow on the right */
+[dir="ltr"] .select-arrow-icon {
+  --arrow-right: 0.75rem;
+  --arrow-left: auto;
+}
+
+[dir="ltr"] select {
+  padding-right: 2.5rem;
+}
+
+/* Arabic (RTL) - Arrow on the left */
+[dir="rtl"] .select-arrow-icon {
+  --arrow-right: auto;
+  --arrow-left: 0.75rem;
+}
+
+[dir="rtl"] select {
+  padding-left: 2.5rem;
+  padding-right: 1rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  [dir="ltr"] .select-arrow-icon {
+    --arrow-right: 1rem;
+  }
+
+  [dir="ltr"] select {
+    padding-right: 2.75rem;
+  }
+
+  [dir="rtl"] .select-arrow-icon {
+    --arrow-left: 1rem;
+  }
+
+  [dir="rtl"] select {
+    padding-left: 2.75rem;
+  }
+}
+/* English (LTR) */
+[dir="ltr"] .date-icon {
+  --icon-right: 0.75rem;
+  --icon-left: auto;
+}
+
+[dir="ltr"] .date-input-icon {
+  padding-right: 2.75rem;
+}
+
+[dir="ltr"] .time-arrow {
+  --arrow-right: 0.5rem;
+  --arrow-left: auto;
+}
+
+[dir="ltr"] .time-select {
+  padding-right: 1.75rem;
+}
+
+/* Arabic (RTL) */
+[dir="rtl"] .date-icon {
+  --icon-right: auto;
+  --icon-left: 0.75rem;
+}
+
+[dir="rtl"] .date-input-icon {
+  padding-left: 2.75rem;
+  padding-right: 0.75rem;
+}
+
+[dir="rtl"] .time-arrow {
+  --arrow-right: auto;
+  --arrow-left: 0.5rem;
+}
+
+[dir="rtl"] .time-select {
+  padding-left: 1.75rem;
+  padding-right: 0.75rem;
+}
+
+/* Responsive - Medium screens and up */
+@media (min-width: 768px) {
+  [dir="ltr"] .date-icon {
+    --icon-right: 1rem;
+  }
+
+  [dir="ltr"] .date-input-icon {
+    padding-right: 3rem;
+  }
+
+  [dir="ltr"] .time-arrow {
+    --arrow-right: 0.75rem;
+  }
+
+  [dir="ltr"] .time-select {
+    padding-right: 2rem;
+  }
+
+  [dir="rtl"] .date-icon {
+    --icon-left: 1rem;
+  }
+
+  [dir="rtl"] .date-input-icon {
+    padding-left: 3rem;
+  }
+
+  [dir="rtl"] .time-arrow {
+    --arrow-left: 0.75rem;
+  }
+
+  [dir="rtl"] .time-select {
+    padding-left: 2rem;
+  }
+}

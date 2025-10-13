@@ -4,6 +4,7 @@ const translations = {
     // Header
     phone: "+966 56 474 6005",
     locations: "OUR LOCATIONS",
+    doctorJob: "DR",
     doctorName: "Reham Hamed",
     bookVisit: "Book a Visit",
 
@@ -59,6 +60,18 @@ const translations = {
       "Witness real patient journeys and expert insights from Dr. Reham Hamed",
     visitYoutube: "VISIT OUR YOUTUBE CHANNEL",
     visitYoutubeMobile: "VISIT YOUTUBE",
+    videoRhinoplasty: "RHINOPLASTY",
+    videoRhinoplastyDesc: "Natural Nose Reshaping Results",
+    videoRhinoplastyDate: "2 weeks ago",
+    videoRhinoplastyViews: "8.2K views",
+    videoInjectables: "INJECTABLES",
+    videoInjectablesDesc: "Lip Filler Technique Explained",
+    videoInjectablesDate: "1 week ago",
+    videoInjectablesViews: "15.7K views",
+    videoSkinCare: "SKIN CARE",
+    videoSkinCareDesc: "Post-Treatment Care Routine",
+    videoSkinCareDate: "3 days ago",
+    videoSkinCareViews: "12.3K views",
 
     // Before/After Section
     beforeAfterBadge: "TOP TREATMENTS",
@@ -83,10 +96,10 @@ const translations = {
     aboutDesc:
       "Renowned as a leading dermatologist and aesthetic specialist in Riyadh, Dr. Reham Hamed is trusted by patients from across the region for her expertise in achieving natural, refined, and long-lasting results.",
     aboutDoctor: "ABOUT THE DOCTOR",
-    stat1: "Years in Business",
-    stat2: "Coolsculpting Cycles",
-    stat3: "Patients Cared For",
-    stat4: "Professionalism & Love",
+    stats1: "Years in Business",
+    stats2: "Coolsculpting Cycles",
+    stats3: "Patients Cared For",
+    stats4: "Professionalism & Love",
 
     // Blog Section
     blogTitle: "From the Blog",
@@ -102,14 +115,16 @@ const translations = {
     // Testimonials
     testimonialsTitle: "What Our Clients Say",
     testimonialsSubtitle: "More than 250 five-star reviews on Google",
+    seeMore: "See More",
+    seeLess: "See Less",
 
     // Booking Section
     bookingBadge: "ENHANCE YOUR NATURAL GLOW",
-    bookingTitle1: "Take the next step and",
+    bookingTitle1: "Take the next step and schedule an appointment today",
     bookingTitle2: "schedule an appointment today",
-    yourName: "YOUR NAME",
-    yourEmail: "YOUR EMAIL",
-    yourPhone: "YOUR PHONE",
+    yourName: "Your Name",
+    yourEmail: "Your Email",
+    yourPhone: "Your Phone",
     treatment: "TREATMENT",
     date: "DATE",
     time: "TIME",
@@ -124,15 +139,16 @@ const translations = {
     footerCity: "Riyadh, Saudi Arabia",
     footerHours: "Mon-Fri: 9am – 5pm",
     footerContacts: "Contacts",
-    footerEmail: "rehamhamid@example.com",
+    email: "rehamhamid@example.com",
     footerSubtitle: "Dermatology, Laser & Aesthetic Medicine",
     footerCopyright: "© 2025 Dr. Reham Hamed – All Rights Reserved",
   },
 
   ar: {
     // Header
-    phone: "+966 56 474 6005",
+    phone: "٦٠٠٥ ٤٧٤ ٥٦ ٩٦٦+",
     locations: "مواقعنا",
+    doctorJob: "د.",
     doctorName: "ريهام حامد",
     bookVisit: "احجز زيارة",
 
@@ -186,6 +202,18 @@ const translations = {
     videosSubtitle: "شاهدي رحلات المرضى الحقيقية ورؤى الخبراء من د. ريهام حامد",
     visitYoutube: "زوري قناتنا على يوتيوب",
     visitYoutubeMobile: "زوري يوتيوب",
+    videoRhinoplasty: "تجميل الأنف",
+    videoRhinoplastyDesc: "نتائج طبيعية لإعادة تشكيل الأنف",
+    videoRhinoplastyDate: "منذ أسبوعين",
+    videoRhinoplastyViews: "8.2 ألف مشاهدة",
+    videoInjectables: "الحقن التجميلية",
+    videoInjectablesDesc: "شرح تقنية حقن الشفاه",
+    videoInjectablesDate: "منذ أسبوع",
+    videoInjectablesViews: "15.7 ألف مشاهدة",
+    videoSkinCare: "العناية بالبشرة",
+    videoSkinCareDesc: "روتين العناية بعد العلاج",
+    videoSkinCareDate: "منذ 3 أيام",
+    videoSkinCareViews: "12.3 ألف مشاهدة",
 
     // Before/After Section
     beforeAfterBadge: "أفضل العلاجات",
@@ -210,10 +238,10 @@ const translations = {
     aboutDesc:
       "تُعرف د. ريهام حامد كطبيبة أمراض جلدية وأخصائية تجميل رائدة في الرياض، ويثق بها المرضى من جميع أنحاء المنطقة لخبرتها في تحقيق نتائج طبيعية ومصقولة ودائمة.",
     aboutDoctor: "عن الدكتورة",
-    stat1: "سنوات من الخبرة",
-    stat2: "جلسات كولسكلبتنج",
-    stat3: "مرضى تمت رعايتهم",
-    stat4: "احترافية وحب",
+    stats1: "سنوات من الخبرة",
+    stats2: "جلسات كولسكلبتنج",
+    stats3: "مرضى تمت رعايتهم",
+    stats4: "احترافية وحب",
 
     // Blog Section
     blogTitle: "من المدونة",
@@ -229,10 +257,12 @@ const translations = {
     // Testimonials
     testimonialsTitle: "ماذا يقول عملاؤنا",
     testimonialsSubtitle: "أكثر من 250 تقييم خمس نجوم على جوجل",
+    seeMore: "عرض المزيد",
+    seeLess: "عرض أقل",
 
     // Booking Section
     bookingBadge: "عززي توهجك الطبيعي",
-    bookingTitle1: "خذي الخطوة التالية و",
+    bookingTitle1: "اتخذ الخطوة التالية وحدد موعدًا اليوم",
     bookingTitle2: "حددي موعداً اليوم",
     yourName: "اسمك",
     yourEmail: "بريدك الإلكتروني",
@@ -251,8 +281,72 @@ const translations = {
     footerCity: "الرياض، المملكة العربية السعودية",
     footerHours: "الإثنين-الجمعة: 9 صباحاً – 5 مساءً",
     footerContacts: "التواصل",
-    footerEmail: "rehamhamid@example.com",
+    email: "rehamhamid@example.com",
     footerSubtitle: "طب الجلدية، الليزر والطب التجميلي",
     footerCopyright: "© 2025 د. ريهام حامد – جميع الحقوق محفوظة",
   },
+};
+
+// ============================================
+// TESTIMONIALS DATA - يتحدث حسب اللغة
+// ============================================
+const testimonialsData = {
+  en: [
+    {
+      id: "testimonial-1",
+      fullText:
+        "I came across Dr. Simmons on my hunt for the perfect Doctor and I'm so glad I did. I was a little worried being he didn't have many pics on IG. I just followed my intuition and he delivered. Not only did he give me the body of my dreams, he listened to me and answered all my questions through DM. He heard everything I had to say and gave me exactly what I wanted.",
+      name: "Cynthia K.",
+      procedure: "on Breast Augmentation",
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
+    },
+    {
+      id: "testimonial-2",
+      fullText:
+        "The results were beyond my expectations. The doctor is very professional and I'm satisfied with the entire experience from start to finish. He explained everything clearly and made sure I felt comfortable throughout the process. I would definitely recommend him to anyone looking for quality and care.",
+      name: "Nora J.",
+      procedure: "on Body Contouring",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
+    },
+    {
+      id: "testimonial-3",
+      fullText:
+        "Amazing doctor with incredible attention to detail. The results look completely natural and I couldn't be happier. The entire staff made me feel comfortable and cared for throughout the entire process from consultation to recovery. I highly recommend this practice to anyone considering any procedure.",
+      name: "Lama M.",
+      procedure: "on Facelift",
+      image:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop",
+    },
+  ],
+  ar: [
+    {
+      id: "testimonial-1",
+      fullText:
+        "وجدت الدكتورة في بحثي عن الطبيب المثالي وأنا سعيدة جداً بذلك. كنت قلقة قليلاً لأنه لم يكن لديه صور كثيرة على إنستجرام. اتبعت حدسي فقط وكانت النتيجة رائعة. لم يمنحني الجسم الذي أحلم به فحسب، بل استمع إلي وأجاب على جميع أسئلتي. سمع كل ما أردت قوله وأعطاني بالضبط ما أردت.",
+      name: "سينثيا ك.",
+      procedure: "تكبير الثدي",
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
+    },
+    {
+      id: "testimonial-2",
+      fullText:
+        "النتائج فاقت توقعاتي. الدكتورة محترفة جداً وأنا راضية عن التجربة بأكملها من البداية إلى النهاية. شرحت كل شيء بوضوح وتأكدت من أنني مرتاحة طوال العملية. بالتأكيد أوصي بها لأي شخص يبحث عن الجودة والرعاية.",
+      name: "نورا ج.",
+      procedure: "نحت الجسم",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
+    },
+    {
+      id: "testimonial-3",
+      fullText:
+        "دكتورة رائعة مع اهتمام لا يصدق بالتفاصيل. النتائج تبدو طبيعية تماماً ولا يمكن أن أكون أكثر سعادة. الطاقم بأكمله جعلني أشعر بالراحة والاهتمام طوال العملية من الاستشارة إلى التعافي. أوصي بشدة بهذه العيادة لأي شخص يفكر في أي إجراء.",
+      name: "لمى م.",
+      procedure: "شد الوجه",
+      image:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop",
+    },
+  ],
 };

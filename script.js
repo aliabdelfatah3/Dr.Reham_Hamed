@@ -1,13 +1,3 @@
-// // Header scroll effect
-// const mainHeader = document.getElementById("mainHeader");
-// window.addEventListener("scroll", () => {
-//   if (window.scrollY > 50) {
-//     mainHeader.classList.add("scrolled");
-//   } else {
-//     mainHeader.classList.remove("scrolled");
-//   }
-// });
-
 // Mobile Menu Toggle
 (function () {
   const mobileMenuBtn = document.getElementById("mobileMenuBtn");
@@ -82,6 +72,7 @@ serviceItems.forEach((item) => {
     }
   });
 });
+
 const serviceTabs = document.querySelectorAll(".service-tab");
 const serviceCards = document.querySelectorAll(".service-card");
 
@@ -127,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Update slider position
     slider.style.left = position + "%";
 
-    // Update overlay clip-path (يكشف الصورة من الشمال)
+    // Update overlay clip-path
     overlay.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
   };
 
@@ -154,12 +145,12 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("mousemove", onMove);
   document.addEventListener("mouseup", stopDragging);
 
-  // Touch Events (للموبايل)
+  // Touch Events
   slider.addEventListener("touchstart", startDragging, { passive: false });
   document.addEventListener("touchmove", onMove, { passive: false });
   document.addEventListener("touchend", stopDragging);
 
-  // منع السحب على الصور
+  // Prevent image dragging
   wrapper.querySelectorAll("img").forEach((img) => {
     img.addEventListener("dragstart", (e) => e.preventDefault());
   });
@@ -178,6 +169,7 @@ if (simpleForm) {
     }
   });
 }
+
 document.addEventListener("DOMContentLoaded", () => {
   const bookingForm = document.querySelector("#booking form");
   const toast = document.getElementById("toastMessage");
@@ -249,41 +241,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-const testimonials = [
-  {
-    id: "testimonial-1",
-    fullText:
-      "I came across Dr. Simmons on my hunt for the perfect Doctor and I'm so glad I did. I was a little worried being he didn't have many pics on IG. I just followed my intuition and he delivered. Not only did he give me the body of my dreams, he listened to me and answered all my questions through DM. He heard everything I had to say and gave me exactly what I wanted.",
-    name: "Cynthia K.",
-    procedure: "on Breast Augmentation",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
-  },
-  {
-    id: "testimonial-2",
-    fullText:
-      "The results were beyond my expectations. The doctor is very professional and I'm satisfied with the entire experience from start to finish. He explained everything clearly and made sure I felt comfortable throughout the process. I would definitely recommend him to anyone looking for quality and care.",
-    name: "Nora J.",
-    procedure: "on Body Contouring",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
-  },
-  {
-    id: "testimonial-3",
-    fullText:
-      "Amazing doctor with incredible attention to detail. The results look completely natural and I couldn't be happier. The entire staff made me feel comfortable and cared for throughout the entire process from consultation to recovery. I highly recommend this practice to anyone considering any procedure.",
-    name: "Lama M.",
-    procedure: "on Facelift",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop",
-  },
-];
+// ============================================
+// TESTIMONIALS SECTION
+// ============================================
+
+// Get current language for testimonials
+let currentLang = localStorage.getItem("language") || "en";
+let testimonials = testimonialsData[currentLang];
 
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const indicatorsContainer = document.getElementById("indicators");
 
-// تشيك لو كل العناصر موجودة قبل ما نشغل أي حاجة
 if (prevBtn && nextBtn && indicatorsContainer) {
   let currentIndex = 0;
   const charLimit = 200;
@@ -314,7 +283,7 @@ if (prevBtn && nextBtn && indicatorsContainer) {
     const testimonial = testimonials[index];
     const textElement = document.getElementById(`text-${index + 1}`);
 
-    if (!textElement) return; // تشيك لو العنصر مش موجود
+    if (!textElement) return;
 
     const truncatedText = truncateText(testimonial.fullText, charLimit);
     const hasMore = shouldShowSeeMore(testimonial.fullText);
@@ -325,7 +294,7 @@ if (prevBtn && nextBtn && indicatorsContainer) {
     if (hasMore) {
       const btn = document.createElement("button");
       btn.className = "see-more-btn";
-      btn.innerHTML = " <span>See More</span>";
+      btn.innerHTML = ` <span>${translations[currentLang].seeMore}</span>`;
       btn.addEventListener("click", (e) => {
         e.preventDefault();
         expandText(index, textElement, testimonial.fullText);
@@ -349,7 +318,7 @@ if (prevBtn && nextBtn && indicatorsContainer) {
 
     const btn = document.createElement("button");
     btn.className = "see-more-btn";
-    btn.innerHTML = " <span>See Less</span>";
+    btn.innerHTML = ` <span>${translations[currentLang].seeLess}</span>`;
     btn.addEventListener("click", (e) => {
       e.preventDefault();
       updateTestimonial(index);
@@ -407,82 +376,82 @@ if (prevBtn && nextBtn && indicatorsContainer) {
   createIndicators();
   showTestimonial(0);
 }
-// Auto-slide every 8 seconds
-// setInterval(() => {
-//   currentIndex = (currentIndex + 1) % testimonials.length;
-//   updateTestimonial(currentIndex);
-// }, 8000);
 
-// الخدمات الأساسية - هتكتبها مرة واحدة بس!
-const services = [
-  "Facelift",
-  "Rhinoplasty",
-  "Mommy Makeover",
-  "Tummy Tuck",
-  "Liposuction",
-  "Injectables",
-];
+// ============================================
+// SERVICES BAR - DYNAMIC TRANSLATION
+// ============================================
 
-// دالة لإنشاء عنصر خدمة
+function getServicesList(lang) {
+  return [
+    translations[lang].serviceFacelift,
+    translations[lang].serviceRhinoplasty,
+    translations[lang].serviceMommy,
+    translations[lang].serviceTummy,
+    translations[lang].serviceLipo,
+    translations[lang].serviceInject,
+  ];
+}
+
 function createServiceItem(serviceName) {
   const div = document.createElement("div");
-  div.className = "service-item";
+  div.className =
+    "flex items-center gap-1.5 text-white uppercase text-xs md:text-sm tracking-wider transition-all duration-300 cursor-default px-4 md:px-6 py-2 rounded-full no-underline whitespace-nowrap";
   div.innerHTML = `
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="7"></circle>
-          <circle cx="12" cy="12" r="3"></circle>
-        </svg>
-        <span>${serviceName}</span>
-      `;
+    <svg class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="7"></circle>
+      <circle cx="12" cy="12" r="3"></circle>
+    </svg>
+    <span>${serviceName}</span>
+  `;
   return div;
 }
 
 const servicesBar = document.getElementById("servicesBar");
 
-if (servicesBar) {
-  // أضف الكونتنت الأصلي مرة واحدة
+function updateServicesBar(lang) {
+  if (!servicesBar) return;
+
+  servicesBar.innerHTML = "";
+  const services = getServicesList(lang);
+
+  // Add original content
   services.forEach((service) => {
     servicesBar.appendChild(createServiceItem(service));
   });
 
-  // بعد ما الصفحة تحمل، احسب العرض وكلون
-  window.addEventListener("load", function () {
+  // Calculate and clone for infinite scroll
+  setTimeout(() => {
     const contentWidth = servicesBar.scrollWidth;
     const viewportWidth = window.innerWidth;
 
-    // احسب كام نسخة محتاجين علشان نملا الشاشة + شوية زيادة
     const copies = Math.ceil(viewportWidth / contentWidth) + 2;
-
-    // كلون الكونتنت
     const originalContent = servicesBar.innerHTML;
+
     for (let i = 0; i < copies; i++) {
       servicesBar.innerHTML += originalContent;
     }
 
-    // حدث الأنيميشن ديناميكياً
     const totalCopies = copies + 1;
-    const animationDuration = 60; // seconds
+    const animationDuration = 60;
 
     servicesBar.style.animation = `scrollServices ${animationDuration}s linear infinite`;
 
-    // أضف الـ keyframe ديناميكياً
     const styleSheet = document.styleSheets[0];
     const keyframes = `
-        @keyframes scrollServices {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(calc(-100% / ${totalCopies})); }
-        }
-      `;
+      @keyframes scrollServices {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-100% / ${totalCopies})); }
+      }
+    `;
 
-    // امسح الـ keyframe القديم وأضف الجديد
     for (let i = styleSheet.cssRules.length - 1; i >= 0; i--) {
       if (styleSheet.cssRules[i].name === "scrollServices") {
         styleSheet.deleteRule(i);
       }
     }
     styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
-  });
-} // ← هنا قفلنا الـ if
+  }, 100);
+}
 
 // Animate elements on scroll
 const observerOptions = {
@@ -515,10 +484,7 @@ const handleScroll = () => {
   }
 };
 
-// شغله أول مرة لما الصفحة تفتح
 handleScroll();
-
-// شغله كل ما يحصل Scroll
 window.addEventListener("scroll", handleScroll);
 
 const bookingSection = document.querySelector(".booking-section");
@@ -559,6 +525,7 @@ if (bookingSection) {
     }, 3000);
   });
 }
+
 // Contact Form Submission
 const contactForm = document.getElementById("contactForm");
 const toast = document.getElementById("toastMessage");
@@ -631,12 +598,10 @@ function showToast(message, type) {
 // LANGUAGE SWITCHER
 // ============================================
 
-// Get current language from localStorage or default to English
-let currentLang = localStorage.getItem("language") || "en";
-
 // Initialize language on page load
 document.addEventListener("DOMContentLoaded", () => {
   applyLanguage(currentLang);
+  updateServicesBar(currentLang);
 });
 
 // Function to change language
@@ -644,6 +609,17 @@ function changeLanguage(lang) {
   currentLang = lang;
   localStorage.setItem("language", lang);
   applyLanguage(lang);
+
+  // Update testimonials
+  testimonials = testimonialsData[lang];
+  if (indicatorsContainer) {
+    indicatorsContainer.innerHTML = "";
+    createIndicators();
+  }
+  showTestimonial(0);
+
+  // Update services bar
+  updateServicesBar(lang);
 
   // Update button states
   updateLanguageButtons(lang);
@@ -677,7 +653,7 @@ function applyLanguage(lang) {
     document.body.classList.remove("rtl");
   }
 
-  // Update select options if needed
+  // Update select options
   updateSelectOptions(lang);
 }
 
@@ -685,10 +661,34 @@ function applyLanguage(lang) {
 function updateSelectOptions(lang) {
   const treatmentSelects = document.querySelectorAll("select");
   treatmentSelects.forEach((select) => {
-    if (select.querySelector('option[value=""]')) {
-      const firstOption = select.querySelector('option[value=""]');
-      firstOption.textContent = translations[lang].selectTreatment;
+    // Update "Select Treatment" option
+    const selectOption = select.querySelector('option[value="treatment"]');
+    if (selectOption) {
+      selectOption.textContent = translations[lang].selectTreatment;
     }
+
+    // Update treatment options
+    const options = {
+      facelift: translations[lang].serviceFacelift,
+      rhinoplasty: translations[lang].serviceRhinoplasty,
+      "mommy-makeover": translations[lang].serviceMommy,
+      "tummy-tuck": translations[lang].serviceTummy,
+      liposuction: translations[lang].serviceLipo,
+      injectables: translations[lang].serviceInject,
+    };
+
+    Object.keys(options).forEach((value) => {
+      const option = select.querySelector(`option[value="${value}"]`);
+      if (option) {
+        option.textContent = options[value];
+      }
+    });
+
+    // Update Hour/Minute selects
+    const hourOption = document.querySelector('option[value="hour"]');
+    const minuteOption = document.querySelector('option[value="minute"]');
+    if (hourOption) hourOption.textContent = translations[lang].hour;
+    if (minuteOption) minuteOption.textContent = translations[lang].minute;
   });
 }
 

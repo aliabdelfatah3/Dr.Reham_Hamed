@@ -58,11 +58,13 @@
                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
               ></path>
             </svg>
-            <span class="whitespace-nowrap">+966 56 474 6005</span>
+            <span data-i18n="phone" class="whitespace-nowrap"
+              >+966 56 474 6005</span
+            >
           </div>
           <a
             href="contactus.html"
-            class="flex items-center gap-2 text-white no-underline text-xs lg:text-sm transition-all duration-300 px-3 lg:px-4 py-2 rounded-full hover:text-[#DAA520] hover:bg-[#DAA520]/10 hover:-translate-y-0.5"
+            class="flex items-center w-full gap-2 text-white no-underline text-xs lg:text-sm transition-all duration-300 px-3 lg:px-4 py-2 rounded-full hover:text-[#DAA520] hover:bg-[#DAA520]/10 hover:-translate-y-0.5"
           >
             <svg
               class="w-4 h-4 lg:w-[18px] lg:h-[18px]"
@@ -74,7 +76,9 @@
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
               <circle cx="12" cy="10" r="3"></circle>
             </svg>
-            <span class="whitespace-nowrap">OUR LOCATIONS</span>
+            <span data-i18n="locations" class="whitespace-nowrap"
+              >OUR LOCATIONS</span
+            >
           </a>
         </div>
 
@@ -84,11 +88,13 @@
           class="flex items-center gap-2 no-underline md:gap-3 lg:gap-4 lg:absolute lg:-translate-x-1/2 lg:left-1/2"
         >
           <div
+            data-i18n="doctorJob"
             class="w-[35px] h-[35px] md:w-[45px] md:h-[45px] lg:w-[50px] lg:h-[50px] border-2 border-[#DAA520] rounded-full flex items-center justify-center text-lg md:text-xl lg:text-2xl text-[#DAA520] font-bold italic logo-glow"
           >
             DR
           </div>
           <div
+            data-i18n="doctorName"
             class="text-lg md:text-2xl lg:text-3xl font-light tracking-[0.2rem] md:tracking-[0.25rem] lg:tracking-[0.3rem] text-white uppercase"
           >
             Reham Hamed
@@ -96,6 +102,34 @@
         </a>
 
         <!-- Mobile Menu Toggle -->
+        <div class="flex gap-5">
+          <!-- Language Switcher - يضاف قبل زرار Book a Visit -->
+          <div class="items-center hidden gap-2 lg:flex">
+            <button
+              onclick="changeLanguage('en')"
+              class="px-4 py-2 text-sm text-white transition-all duration-300 border lang-btn border-white/30 hover:bg-white/10"
+              data-lang="en"
+            >
+              EN
+            </button>
+            <button
+              onclick="changeLanguage('ar')"
+              class="px-4 py-2 text-sm text-white transition-all duration-300 border lang-btn border-white/30 hover:bg-white/10"
+              data-lang="ar"
+            >
+              عربي
+            </button>
+          </div>
+          <!-- CTA Button - Hidden on mobile, shown in menu -->
+          <a href="booking.html" class="hidden lg:block">
+            <button
+              data-i18n="bookVisit"
+              class="px-6 lg:px-8 py-2.5 lg:py-3 bg-transparent border-2 border-[#DAA520] text-white uppercase tracking-wider cursor-pointer transition-all duration-[400ms] ease-in-out text-xs lg:text-sm font-semibold relative overflow-hidden hover:bg-[#DAA520] hover:text-black hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(218,165,32,0.4)]"
+            >
+              Book a Visit
+            </button>
+          </a>
+        </div>
         <button
           id="mobileMenuBtn"
           class="p-2 text-white bg-transparent border-none cursor-pointer lg:hidden"
@@ -114,15 +148,6 @@
             <line x1="3" y1="18" x2="21" y2="18"></line>
           </svg>
         </button>
-
-        <!-- CTA Button - Hidden on mobile, shown in menu -->
-        <a href="booking.html" class="hidden lg:block">
-          <button
-            class="px-6 lg:px-8 py-2.5 lg:py-3 bg-transparent border-2 border-[#DAA520] text-white uppercase tracking-wider cursor-pointer transition-all duration-[400ms] ease-in-out text-xs lg:text-sm font-semibold relative overflow-hidden hover:bg-[#DAA520] hover:text-black hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(218,165,32,0.4)]"
-          >
-            Book a Visit
-          </button>
-        </a>
       </div>
 
       <!-- Desktop Navigation Menu -->
@@ -130,40 +155,46 @@
         class="items-center justify-center hidden gap-6 mt-4 desktop-nav lg:flex lg:gap-10"
       >
         <a
+          data-i18n="navHome"
           href="/"
-          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
+          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:start-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
           >Home</a
         >
         <a
+          data-i18n="navServices"
           href="services.html"
-          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
+          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:start-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
           >Services</a
         >
         <a
+          data-i18n="navAbout"
           href="aboutus.html"
-          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
+          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:start-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
           >About us</a
         >
         <a
+          data-i18n="navVideos"
           href="videos.html"
-          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
+          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:start-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
           >Videos</a
         >
         <a
+          data-i18n="navBlogs"
           href="blogs.html"
-          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
+          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:start-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
           >Blogs</a
         >
         <a
+          data-i18n="navContact"
           href="contactus.html"
-          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
+          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:start-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
           >Contact us</a
         >
       </nav>
       <!-- Mobile Menu Overlay -->
       <div
         id="mobileMenuOverlay"
-        class="mobile-menu hidden fixed top-0 left-0 w-full h-full bg-black/50 z-[1001] lg:hidden backdrop-blur-sm"
+        class="mobile-menu hidden fixed top-0 start-0 w-full h-full bg-black/50 z-[1001] lg:hidden backdrop-blur-sm"
       >
         <div
           id="mobileMenu"
@@ -186,32 +217,57 @@
 
           <!-- Mobile Navigation Links -->
           <nav class="flex flex-col gap-6 mb-8">
+            <!-- Mobile Language Switcher -->
+            <div
+              class="mobile-lang-switcher flex gap-2 mt-auto pt-4 border-t border-[#DAA520]/30"
+            >
+              <button
+                onclick="changeLanguage('en')"
+                class="flex-1 px-4 py-3 text-sm text-white border lang-btn border-white/30"
+                data-lang="en"
+              >
+                English
+              </button>
+              <button
+                onclick="changeLanguage('ar')"
+                class="flex-1 px-4 py-3 text-sm text-white border lang-btn border-white/30"
+                data-lang="ar"
+              >
+                العربية
+              </button>
+            </div>
             <a
+              data-i18n="navHome"
               href="/"
               class="text-white text-lg uppercase tracking-wider py-3 border-b border-[#DAA520]/30 transition-colors hover:text-[#DAA520]"
               >Home</a
             >
             <a
+              data-i18n="navServices"
               href="services.html"
               class="text-white text-lg uppercase tracking-wider py-3 border-b border-[#DAA520]/30 transition-colors hover:text-[#DAA520]"
               >Services</a
             >
             <a
+              data-i18n="navAbout"
               href="aboutus.html"
               class="text-white text-lg uppercase tracking-wider py-3 border-b border-[#DAA520]/30 transition-colors hover:text-[#DAA520]"
               >About us</a
             >
             <a
+              data-i18n="navVideos"
               href="videos.html"
               class="text-white text-lg uppercase tracking-wider py-3 border-b border-[#DAA520]/30 transition-colors hover:text-[#DAA520]"
               >Videos</a
             >
             <a
+              data-i18n="navBlogs"
               href="blogs.html"
               class="text-white text-lg uppercase tracking-wider py-3 border-b border-[#DAA520]/30 transition-colors hover:text-[#DAA520]"
               >Blogs</a
             >
             <a
+              data-i18n="navContact"
               href="contactus.html"
               class="text-white text-lg uppercase tracking-wider py-3 border-b border-[#DAA520]/30 transition-colors hover:text-[#DAA520]"
               >Contact us</a
@@ -232,7 +288,7 @@
                   d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
                 ></path>
               </svg>
-              <span>+966 56 474 6005</span>
+              <span data-i18n="phone">+966 56 474 6005</span>
             </div>
             <a
               href="contactus.html"
@@ -248,13 +304,14 @@
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
-              <span>OUR LOCATIONS</span>
+              <span data-i18n="locations">OUR LOCATIONS</span>
             </a>
           </div>
 
           <!-- Mobile CTA Button -->
           <a href="booking.html" class="mt-auto">
             <button
+              data-i18n="bookVisit"
               class="w-full px-6 py-3 bg-gradient-to-br from-[#DAA520] to-[#8B4513] border-2 border-[#DAA520] text-white uppercase tracking-wider font-semibold rounded-lg"
             >
               Book a Visit
@@ -279,7 +336,7 @@
         ></div>
         <div class="absolute inset-0">
           <div
-            class="particle absolute w-[200px] h-[200px] md:w-[300px] md:h-[300px] top-[10%] left-[10%] md:left-[20%] rounded-full bg-[radial-gradient(circle,rgba(218,165,32,0.8)_0%,transparent_70%)]"
+            class="particle absolute w-[200px] h-[200px] md:w-[300px] md:h-[300px] top-[10%] start-[10%] md:start-[20%] rounded-full bg-[radial-gradient(circle,rgba(218,165,32,0.8)_0%,transparent_70%)]"
           ></div>
           <div
             class="particle absolute w-[150px] h-[150px] md:w-[200px] md:h-[200px] top-[60%] right-[10%] md:right-[15%] rounded-full bg-[radial-gradient(circle,rgba(218,165,32,0.8)_0%,transparent_70%)]"
@@ -299,12 +356,18 @@
       >
         <div>
           <h1
+            data-i18n="heroTitle1"
             class="text-3xl md:text-4xl lg:text-5xl xl:text-[3rem] font-light text-white leading-tight tracking-wider uppercase opacity-0 fade-in-up"
           >
             FEEL YOUR BEST
-            <span class="block font-semibold shimmer-text">LOOK YOUR BEST</span>
+            <span
+              data-i18n="heroTitle2"
+              class="block font-semibold shimmer-text"
+              >LOOK YOUR BEST</span
+            >
           </h1>
           <p
+            data-i18n="heroDesc"
             class="text-base md:text-lg lg:text-xl text-white/80 mb-8 md:mb-10 lg:mb-12 max-w-full md:max-w-[450px] lg:max-w-[500px] leading-relaxed fade-in-up-delay-1"
           >
             The leading destination for dermatology and aesthetic treatments in
@@ -317,14 +380,18 @@
               <button
                 class="w-full sm:w-auto px-6 md:px-8 lg:px-10 py-4 md:py-5 text-sm md:text-base uppercase tracking-[0.15rem] cursor-pointer transition-all duration-[400ms] ease-in-out border-2 border-[#DAA520] relative overflow-hidden font-semibold bg-gradient-to-br from-[#DAA520] to-[#8B4513] text-white shadow-[0_10px_40px_rgba(218,165,32,0.3)] hover:-translate-y-1.5 hover:shadow-[0_15px_50px_rgba(218,165,32,0.5)]"
               >
-                <span class="relative z-[1]">Book Consultation</span>
+                <span data-i18n="heroBtn1" class="relative z-[1]"
+                  >Book Consultation</span
+                >
               </button>
             </a>
             <a href="#services" class="w-full sm:w-auto">
               <button
                 class="w-full sm:w-auto px-6 md:px-8 lg:px-10 py-4 md:py-5 text-sm md:text-base uppercase tracking-[0.15rem] cursor-pointer transition-all duration-[400ms] ease-in-out bg-transparent border-2 border-white text-white relative overflow-hidden font-semibold hover:bg-white hover:text-black hover:-translate-y-1.5 hover:shadow-[0_15px_50px_rgba(255,255,255,0.2)]"
               >
-                <span class="relative z-[1]">Find Your Procedure</span>
+                <span data-i18n="heroBtn2" class="relative z-[1]"
+                  >Find Your Procedure</span
+                >
               </button>
             </a>
           </div>
@@ -435,11 +502,13 @@
         class="flex flex-col items-center justify-center px-4 pb-12 md:pb-16"
       >
         <h2
+          data-i18n="servicesTitle"
           class="mb-4 text-3xl font-semibold text-center md:text-4xl text-gold"
         >
           Aesthetic & Surgical Services
         </h2>
         <p
+          data-i18n="servicesSubtitle"
           class="max-w-2xl mx-auto text-base text-center text-gray-600 md:text-lg"
         >
           Enhancing your natural beauty through advanced cosmetic and
@@ -462,11 +531,13 @@
                   class="flex flex-col justify-center w-full p-8 lg:w-1/2 md:p-12 lg:p-16"
                 >
                   <h2
+                    data-i18n="serviceFacelift"
                     class="text-4xl md:text-5xl font-light text-[#333] mb-6 uppercase tracking-wide"
                   >
                     FACELIFT
                   </h2>
                   <p
+                    data-i18n="faceliftDesc"
                     class="text-base md:text-lg text-[#666] leading-relaxed mb-8"
                   >
                     The facelift, or Rhytidectomy, is the third most common
@@ -478,6 +549,7 @@
                   </p>
                   <div>
                     <button
+                      data-i18n="viewDetails"
                       class="px-8 py-4 border-2 border-[#2c3e50] text-[#2c3e50] uppercase text-sm font-semibold tracking-wider transition-all duration-300 hover:bg-[#2c3e50] hover:text-white cursor-pointer"
                     >
                       VIEW DETAILS
@@ -506,11 +578,13 @@
                   class="flex flex-col justify-center w-full p-8 lg:w-1/2 md:p-12 lg:p-16"
                 >
                   <h2
+                    data-i18n="serviceRhinoplasty"
                     class="text-4xl md:text-5xl font-light text-[#333] mb-6 uppercase tracking-wide"
                   >
                     RHINOPLASTY
                   </h2>
                   <p
+                    data-i18n="rhinoplastyDesc"
                     class="text-base md:text-lg text-[#666] leading-relaxed mb-8"
                   >
                     Rhinoplasty, commonly known as a nose job, is one of the
@@ -521,6 +595,7 @@
                   </p>
                   <div>
                     <button
+                      data-i18n="viewDetails"
                       class="px-8 py-4 border-2 border-[#2c3e50] text-[#2c3e50] uppercase text-sm font-semibold tracking-wider transition-all duration-300 hover:bg-[#2c3e50] hover:text-white cursor-pointer"
                     >
                       VIEW DETAILS
@@ -547,11 +622,13 @@
                   class="flex flex-col justify-center w-full p-8 lg:w-1/2 md:p-12 lg:p-16"
                 >
                   <h2
+                    data-i18n="serviceMommy"
                     class="text-4xl md:text-5xl font-light text-[#333] mb-6 uppercase tracking-wide"
                   >
                     MOMMY MAKEOVER
                   </h2>
                   <p
+                    data-i18n="mommyDesc"
                     class="text-base md:text-lg text-[#666] leading-relaxed mb-8"
                   >
                     A mommy makeover combines multiple procedures to help
@@ -562,6 +639,7 @@
                   </p>
                   <div>
                     <button
+                      data-i18n="viewDetails"
                       class="px-8 py-4 border-2 border-[#2c3e50] text-[#2c3e50] uppercase text-sm font-semibold tracking-wider transition-all duration-300 hover:bg-[#2c3e50] hover:text-white cursor-pointer"
                     >
                       VIEW DETAILS
@@ -588,11 +666,13 @@
                   class="flex flex-col justify-center w-full p-8 lg:w-1/2 md:p-12 lg:p-16"
                 >
                   <h2
+                    data-i18n="serviceTummy"
                     class="text-4xl md:text-5xl font-light text-[#333] mb-6 uppercase tracking-wide"
                   >
                     TUMMY TUCK
                   </h2>
                   <p
+                    data-i18n="tummyDesc"
                     class="text-base md:text-lg text-[#666] leading-relaxed mb-8"
                   >
                     Abdominoplasty, or tummy tuck, removes excess skin and fat
@@ -603,6 +683,7 @@
                   </p>
                   <div>
                     <button
+                      data-i18n="viewDetails"
                       class="px-8 py-4 border-2 border-[#2c3e50] text-[#2c3e50] uppercase text-sm font-semibold tracking-wider transition-all duration-300 hover:bg-[#2c3e50] hover:text-white cursor-pointer"
                     >
                       VIEW DETAILS
@@ -629,11 +710,13 @@
                   class="flex flex-col justify-center w-full p-8 lg:w-1/2 md:p-12 lg:p-16"
                 >
                   <h2
+                    data-i18n="serviceLipo"
                     class="text-4xl md:text-5xl font-light text-[#333] mb-6 uppercase tracking-wide"
                   >
                     LIPOSUCTION
                   </h2>
                   <p
+                    data-i18n="lipoDesc"
                     class="text-base md:text-lg text-[#666] leading-relaxed mb-8"
                   >
                     Liposuction is a body contouring procedure that removes
@@ -644,6 +727,7 @@
                   </p>
                   <div>
                     <button
+                      data-i18n="viewDetails"
                       class="px-8 py-4 border-2 border-[#2c3e50] text-[#2c3e50] uppercase text-sm font-semibold tracking-wider transition-all duration-300 hover:bg-[#2c3e50] hover:text-white cursor-pointer"
                     >
                       VIEW DETAILS
@@ -670,11 +754,13 @@
                   class="flex flex-col justify-center w-full p-8 lg:w-1/2 md:p-12 lg:p-16"
                 >
                   <h2
+                    data-i18n="serviceInject"
                     class="text-4xl md:text-5xl font-light text-[#333] mb-6 uppercase tracking-wide"
                   >
                     INJECTABLES
                   </h2>
                   <p
+                    data-i18n="injectDesc"
                     class="text-base md:text-lg text-[#666] leading-relaxed mb-8"
                   >
                     Injectable treatments like Botox and dermal fillers offer
@@ -685,6 +771,7 @@
                   </p>
                   <div>
                     <button
+                      data-i18n="viewDetails"
                       class="px-8 py-4 border-2 border-[#2c3e50] text-[#2c3e50] uppercase text-sm font-semibold tracking-wider transition-all duration-300 hover:bg-[#2c3e50] hover:text-white cursor-pointer"
                     >
                       VIEW DETAILS
@@ -708,36 +795,42 @@
           class="grid grid-cols-3 gap-0 overflow-hidden shadow-2xl lg:grid-cols-6"
         >
           <button
+            data-i18n="serviceFacelift"
             class="service-tab active bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
             data-target="facelift"
           >
             FACELIFT
           </button>
           <button
+            data-i18n="serviceRhinoplasty"
             class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
             data-target="rhinoplasty"
           >
             RHINOPLASTY
           </button>
           <button
-            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            data-i18n="serviceMommy"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm overflow-hidden font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
             data-target="mommy"
           >
-            Mommy Makeover
+            Mommy <span class="hidden md:block">Makeover</span>
           </button>
           <button
+            data-i18n="serviceTummy"
             class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
             data-target="tummy"
           >
             TummyTuck
           </button>
           <button
+            data-i18n="serviceLipo"
             class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
             data-target="lipo"
           >
             LIPOSUCTION
           </button>
           <button
+            data-i18n="serviceInject"
             class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
             data-target="inject"
           >
@@ -746,7 +839,7 @@
         </div>
       </div>
     </section>
-    
+
     <!-- FOOTER SECTION -->
     <footer class="relative pt-20 pb-8 overflow-hidden footer-bg-image">
       <!-- Decorative Background Particles -->
@@ -759,11 +852,18 @@
         <div class="grid items-start grid-cols-1 gap-16 md:grid-cols-3">
           <!-- Address Section -->
           <div class="text-center md:text-left fade-in-up">
-            <h3 class="mb-8 text-2xl font-light tracking-wide text-gold">
+            <h3
+              data-i18n="footerAddress"
+              class="mb-8 text-2xl font-light tracking-wide text-gold"
+            >
               Address
             </h3>
-            <p class="text-[#666] leading-relaxed mb-4">Riyadh, Saudi Arabia</p>
-            <p class="text-[#666] leading-relaxed mb-4">Mon-Fri: 9am – 5pm</p>
+            <p data-i18n="footerCity" class="text-[#666] leading-relaxed mb-4">
+              Riyadh, Saudi Arabia
+            </p>
+            <p data-i18n="footerHours" class="text-[#666] leading-relaxed mb-4">
+              Mon-Fri: 9am – 5pm
+            </p>
           </div>
 
           <!-- Center Logo Section -->
@@ -774,6 +874,7 @@
             >
               <!-- Logo Circle -->
               <div
+                data-i18n="doctorJob"
                 class="flex items-center justify-center w-24 h-24 text-4xl italic font-bold transition-transform duration-300 border-2 rounded-full border-gold text-gold logo-glow group-hover:scale-110"
               >
                 DR
@@ -782,11 +883,15 @@
               <!-- Brand Name -->
               <div class="text-center">
                 <div
+                  data-i18n="doctorName"
                   class="text-4xl font-light tracking-[0.3rem] text-[#333] uppercase mb-2"
                 >
                   Reham Hamed
                 </div>
-                <div class="text-sm text-[#999] tracking-[0.2rem] uppercase">
+                <div
+                  data-i18n="footerSubtitle"
+                  class="text-sm text-[#999] tracking-[0.2rem] uppercase"
+                >
                   Dermatology, Laser & Aesthetic Medicine
                 </div>
               </div>
@@ -795,16 +900,21 @@
 
           <!-- Contacts Section -->
           <div class="text-center md:text-right fade-in-up">
-            <h3 class="mb-8 text-2xl font-light tracking-wide text-gold">
+            <h3
+              data-i18n="footerContacts"
+              class="mb-8 text-2xl font-light tracking-wide text-gold"
+            >
               Contacts
             </h3>
             <div class="mb-8 space-y-4">
               <a
+                data-i18n="phone"
                 class="block text-[#666] cursor-default hover:text-gold transition-colors duration-300 text-lg"
               >
                 +966 56 474 6005
               </a>
               <a
+                data-i18n="email"
                 href="mailto:clinic@example.com"
                 class="block text-[#666] hover:text-gold transition-colors duration-300"
               >
@@ -889,7 +999,7 @@
 
         <!-- Copyright Section -->
         <div class="mt-20 pt-8 border-t border-[#ddd] text-center">
-          <p class="text-[#999] text-sm">
+          <p data-i18n="footerCopyright" class="text-[#999] text-sm">
             © 2025 Dr. Reham Hamed – All Rights Reserved
           </p>
         </div>
@@ -916,6 +1026,7 @@
         ></path>
       </svg>
     </button>
+    <script src="translations.js"></script>
     <script src="script.js" defer></script>
   </body>
 </html>
