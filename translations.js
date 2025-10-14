@@ -155,6 +155,10 @@ const translations = {
     mapHeroTitle2: "Find Us in Riyadh, Saudi Arabia",
 
     // Booking Section
+    heroBookingTitle1: "Book Your Personalized",
+    heroBookingTitle2: "Consultation Today",
+    heroBookingDesc:
+      "Experience expert aesthetic care in a luxurious and welcoming environment. Whether you’re considering a subtle enhancement or a transformative treatment, our dedicated team is here to guide you every step of the way.",
     bookingBadge: "ENHANCE YOUR NATURAL GLOW",
     bookingTitle1: "Take the next step and schedule an appointment today",
     bookingTitle2: "schedule an appointment today",
@@ -333,6 +337,10 @@ const translations = {
     mapHeroTitle2: "اعثر علينا في الرياض، المملكة العربية السعودية",
 
     // Booking Section
+    heroBookingTitle1: "احجز استشارتك",
+    heroBookingTitle2: "الشخصية اليوم",
+    heroBookingDesc:
+      " استمتعي برعاية تجميلية احترافية في بيئة فاخرة ومريحة. سواء كنتِ تفكرين في تحسين بسيط أو علاج جذري، ففريقنا المتخصص هنا لإرشادكِ خطوة بخطوة. الجلدية والتجميلية في منزلك وبيئة مريضة. تريد العلاج أو تريد العلاج في التجميل ، فإننا نحن هنا لدعمك كل خطوة بكل سهولة.",
     bookingBadge: "عززي توهجك الطبيعي",
     bookingTitle1: "اتخذ الخطوة التالية وحدد موعدًا اليوم",
     bookingTitle2: "حددي موعداً اليوم",
