@@ -596,13 +596,15 @@ function updateSelectOptions(lang) {
 }
 
 function updateLanguageButtons(lang) {
-  // Update ALL buttons (desktop and mobile)
   document.querySelectorAll(".lang-btn").forEach((btn) => {
     const btnLang = btn.getAttribute("data-lang");
+
+    // إزالة كلاس active من كل الأزرار
+    btn.classList.remove("active");
+
+    // إضافة كلاس active للزرار الحالي فقط
     if (btnLang === lang) {
-      btn.style.display = "none";
-    } else {
-      btn.style.display = "inline-block";
+      btn.classList.add("active");
     }
   });
 }

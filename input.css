@@ -766,6 +766,11 @@ button {
     gap: 1.5rem;
   }
 
+  /* Language Buttons - Hide Active */
+  .lang-btn.active {
+    display: none !important;
+  }
+
   [dir="ltr"] .select-arrow-icon {
     --arrow-right: 1rem;
   }
