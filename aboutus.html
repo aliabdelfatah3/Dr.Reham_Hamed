@@ -107,14 +107,14 @@
           <div class="items-center hidden gap-2 lg:flex">
             <button
               onclick="changeLanguage('en')"
-              class="px-4 py-2 text-sm text-white cursor-pointer transition-all duration-300 border lang-btn border-white/30 hover:bg-white/10"
+              class="px-4 py-2 text-sm text-white transition-all duration-300 border cursor-pointer lang-btn border-white/30 hover:bg-white/10"
               data-lang="en"
             >
               EN
             </button>
             <button
               onclick="changeLanguage('ar')"
-              class="px-4 py-2 text-sm text-white cursor-pointer transition-all duration-300 border lang-btn border-white/30 hover:bg-white/10"
+              class="px-4 py-2 text-sm text-white transition-all duration-300 border cursor-pointer lang-btn border-white/30 hover:bg-white/10"
               data-lang="ar"
             >
               AR
@@ -355,15 +355,15 @@
       <div
         class="relative z-10 flex flex-col items-start justify-center flex-1 px-6 text-start md:px-12 lg:px-24 xl:px-36"
       >
-        <div class="max-w-4xl flex flex-wrap">
+        <div class="flex flex-col flex-wrap max-w-4xl">
           <!-- Main Title -->
           <h1
-            class="flex flex-col flex-wrap items-left justify-left text-left md:text-left text-3xl md:text-4xl lg:text-5xl xl:text-[3rem] font-light text-white leading-tight tracking-wider uppercase opacity-0 fade-in-up w-fit md:w-fit mb-6 md:mb-8"
+            class="flex flex-col flex-wrap items-start justify-start text-start md:text-left text-3xl md:text-4xl lg:text-5xl xl:text-[3rem] font-light text-white leading-tight tracking-wider uppercase opacity-0 fade-in-up w-fit md:w-fit mb-6 md:mb-8"
           >
             <span data-i18n="aboutHeroTitle1"> MEET THE EXPERT </span>
             <span
               data-i18n="aboutHeroTitle2"
-              class="mt-2 md:mt-0 font-semibold shimmer-text block md:inline"
+              class="block mt-2 font-semibold md:mt-0 shimmer-text md:inline"
             >
               BEHIND THE TRANSFORMATION
             </span>
@@ -373,13 +373,13 @@
 
           <!-- CTA Buttons -->
           <div
-            class="flex flex-col gap-4 sm:flex-row md:gap-5 fade-in-up-delay-2 justify-start"
+            class="flex flex-col justify-start gap-4 sm:flex-row md:gap-5 fade-in-up-delay-2"
           >
             <a href="booking.html" class="w-full sm:w-auto">
               <button
                 class="w-full sm:w-auto px-8 md:px-10 lg:px-12 py-4 md:py-5 text-sm md:text-base uppercase tracking-[0.15rem] cursor-pointer transition-all duration-[400ms] ease-in-out bg-transparent border-2 border-white text-white relative overflow-hidden font-semibold hover:bg-white hover:text-black hover:-translate-y-1.5 hover:shadow-[0_15px_50px_rgba(255,255,255,0.2)]"
               >
-                <span data-i18n="bookConsultation" class="relative z-[1]">
+                <span data-i18n="heroBtn1" class="relative z-[1]">
                   Book Consultation
                 </span>
               </button>
@@ -432,7 +432,7 @@
             <!-- Description -->
             <p
               data-i18n="aboutHeroDesc"
-              class="text-base md:text-lg lg:text-xl text-white/80 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed fade-in-up-delay-1"
+              class="max-w-3xl mx-auto mb-8 text-base leading-relaxed md:text-lg lg:text-xl text-white/80 md:mb-12 fade-in-up-delay-1"
             >
               With over 15 years of excellence in aesthetic medicine, Dr. Reham
               Hamed combines artistry with medical precision to deliver natural,
@@ -514,28 +514,28 @@
 
     <!-- QUALIFICATIONS & EXCELLENCE -->
     <section class="relative bg-[#101522] py-24 overflow-hidden">
-      <div class="container relative z-10 px-8 mx-auto max-w-6xl">
+      <div class="container relative z-10 max-w-6xl px-8 mx-auto">
         <!-- Section Title -->
         <h2
-          class="text-center text-4xl md:text-5xl font-light text-white mb-16 fade-in-up"
+          class="mb-16 text-4xl font-light text-center text-white md:text-5xl fade-in-up"
         >
-          <span class="text-gold font-semibold">Education</span> &
+          <span class="font-semibold text-gold">Education</span> &
           Qualifications
         </h2>
 
         <!-- Timeline Style -->
         <div
-          class="relative border-l border-gold/40 pl-8 space-y-12 fade-in-up-delay-1"
+          class="relative pl-8 space-y-12 border-l border-gold/40 fade-in-up-delay-1"
         >
           <!-- Step 1 -->
           <div class="relative">
             <div
               class="absolute -left-6 w-6 h-6 bg-gold rounded-full border-4 border-[#101522]"
             ></div>
-            <h3 class="text-xl font-semibold text-gold mb-2">
+            <h3 class="mb-2 text-xl font-semibold text-gold">
               Dermatology & Aesthetic Medicine Degree
             </h3>
-            <p class="text-white/70 leading-relaxed">
+            <p class="leading-relaxed text-white/70">
               Master’s Degree in Dermatology & Aesthetic Medicine from
               <span class="text-white">King Saud University</span>, Riyadh,
               Saudi Arabia.
@@ -547,10 +547,10 @@
             <div
               class="absolute -left-6 w-6 h-6 bg-gold rounded-full border-4 border-[#101522]"
             ></div>
-            <h3 class="text-xl font-semibold text-gold mb-2">
+            <h3 class="mb-2 text-xl font-semibold text-gold">
               Specialized Training
             </h3>
-            <p class="text-white/70 leading-relaxed">
+            <p class="leading-relaxed text-white/70">
               Completed advanced international workshops in facial contouring,
               laser rejuvenation, and minimally invasive aesthetic procedures.
             </p>
@@ -561,10 +561,10 @@
             <div
               class="absolute -left-6 w-6 h-6 bg-gold rounded-full border-4 border-[#101522]"
             ></div>
-            <h3 class="text-xl font-semibold text-gold mb-2">
+            <h3 class="mb-2 text-xl font-semibold text-gold">
               Professional Memberships
             </h3>
-            <p class="text-white/70 leading-relaxed">
+            <p class="leading-relaxed text-white/70">
               Active member of leading international dermatology and aesthetic
               societies, including the
               <span class="text-white"
@@ -583,24 +583,24 @@
 
         <!-- Excellence Section (Circular Stats) -->
         <div class="text-center fade-in-up">
-          <h2 class="text-4xl md:text-5xl font-light text-white mb-12">
-            <span class="text-gold font-semibold">15+ Years</span> of Excellence
+          <h2 class="mb-12 text-4xl font-light text-white md:text-5xl">
+            <span class="font-semibold text-gold">15+ Years</span> of Excellence
           </h2>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
+          <div class="grid grid-cols-1 gap-10 mt-10 md:grid-cols-3">
             <!-- Circle 1 -->
             <div
               class="flex flex-col items-center justify-center p-10 bg-gradient-to-b from-[#1a1a2e] to-[#0e0e1a] rounded-3xl border border-gold/30 hover:border-gold transition-all duration-300"
             >
               <div
-                class="w-24 h-24 flex items-center justify-center rounded-full border-4 border-gold mb-6 text-3xl font-bold text-gold"
+                class="flex items-center justify-center w-24 h-24 mb-6 text-3xl font-bold border-4 rounded-full border-gold text-gold"
               >
                 15+
               </div>
-              <h3 class="text-lg font-semibold text-white mb-2">
+              <h3 class="mb-2 text-lg font-semibold text-white">
                 Years of Experience
               </h3>
-              <p class="text-white/70 text-sm leading-relaxed">
+              <p class="text-sm leading-relaxed text-white/70">
                 Over 15 years in aesthetic dermatology, delivering natural and
                 safe enhancements with precision.
               </p>
@@ -611,14 +611,14 @@
               class="flex flex-col items-center justify-center p-10 bg-gradient-to-b from-[#1a1a2e] to-[#0e0e1a] rounded-3xl border border-gold/30 hover:border-gold transition-all duration-300"
             >
               <div
-                class="w-24 h-24 flex items-center justify-center rounded-full border-4 border-gold mb-6 text-3xl font-bold text-gold"
+                class="flex items-center justify-center w-24 h-24 mb-6 text-3xl font-bold border-4 rounded-full border-gold text-gold"
               >
                 25K+
               </div>
-              <h3 class="text-lg font-semibold text-white mb-2">
+              <h3 class="mb-2 text-lg font-semibold text-white">
                 CoolSculpting Cycles
               </h3>
-              <p class="text-white/70 text-sm leading-relaxed">
+              <p class="text-sm leading-relaxed text-white/70">
                 Recognized for excellence in body contouring procedures with
                 proven and lasting results.
               </p>
@@ -629,14 +629,14 @@
               class="flex flex-col items-center justify-center p-10 bg-gradient-to-b from-[#1a1a2e] to-[#0e0e1a] rounded-3xl border border-gold/30 hover:border-gold transition-all duration-300"
             >
               <div
-                class="w-24 h-24 flex items-center justify-center rounded-full border-4 border-gold mb-6 text-3xl font-bold text-gold"
+                class="flex items-center justify-center w-24 h-24 mb-6 text-3xl font-bold border-4 rounded-full border-gold text-gold"
               >
                 15K+
               </div>
-              <h3 class="text-lg font-semibold text-white mb-2">
+              <h3 class="mb-2 text-lg font-semibold text-white">
                 Happy Patients
               </h3>
-              <p class="text-white/70 text-sm leading-relaxed">
+              <p class="text-sm leading-relaxed text-white/70">
                 Thousands of satisfied patients who’ve trusted Dr. Reham for
                 their transformative results.
               </p>
@@ -667,7 +667,7 @@
       <div class="container relative z-10 px-8 mx-auto max-w-7xl">
         <div class="grid items-start grid-cols-1 gap-16 md:grid-cols-3">
           <!-- Address Section -->
-          <div class="text-center md:text-left fade-in-up">
+          <div class="text-start md:text-start fade-in-up">
             <h3
               data-i18n="footerAddress"
               class="mb-8 text-2xl font-light tracking-wide text-gold"
@@ -715,7 +715,7 @@
           </div>
 
           <!-- Contacts Section -->
-          <div class="text-center md:text-right fade-in-up">
+          <div class="items-end text-end md:text-end fade-in-up">
             <h3
               data-i18n="footerContacts"
               class="mb-8 text-2xl font-light tracking-wide text-gold"

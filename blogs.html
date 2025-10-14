@@ -107,14 +107,14 @@
           <div class="items-center hidden gap-2 lg:flex">
             <button
               onclick="changeLanguage('en')"
-              class="px-4 py-2 text-sm text-white cursor-pointer transition-all duration-300 border lang-btn border-white/30 hover:bg-white/10"
+              class="px-4 py-2 text-sm text-white transition-all duration-300 border cursor-pointer lang-btn border-white/30 hover:bg-white/10"
               data-lang="en"
             >
               EN
             </button>
             <button
               onclick="changeLanguage('ar')"
-              class="px-4 py-2 text-sm text-white cursor-pointer transition-all duration-300 border lang-btn border-white/30 hover:bg-white/10"
+              class="px-4 py-2 text-sm text-white transition-all duration-300 border cursor-pointer lang-btn border-white/30 hover:bg-white/10"
               data-lang="ar"
             >
               AR
@@ -354,19 +354,17 @@
 
       <!-- Main Content -->
       <div
-        class="relative z-10 w-fit flex flex-col items-start justify-center flex-1 px-6 text-start md:px-12 lg:px-24 xl:px-36"
+        class="relative z-10 flex flex-col items-start justify-center flex-1 px-6 w-fit text-start md:px-12 lg:px-24 xl:px-36"
       >
         <div class="max-w-4xl">
           <!-- Main Title -->
           <h1
-            class="flex flex-col flex-wrap items-left justify-left text-left md:text-left text-3xl md:text-4xl lg:text-5xl xl:text-[3rem] font-light text-white leading-tight tracking-wider uppercase opacity-0 fade-in-up w-fit md:w-fit mb-6 md:mb-8"
+            class="flex flex-col flex-wrap items-start justify-start text-start md:text-left text-3xl md:text-4xl lg:text-5xl xl:text-[3rem] font-light text-white leading-tight tracking-wider uppercase opacity-0 fade-in-up w-fit md:w-fit mb-6 md:mb-8"
           >
-            <span data-i18n="aboutHeroTitle1">
-              UNLOCK THE SECRETS
-            </span>
+            <span data-i18n="blogHeroTitle1"> UNLOCK THE SECRETS </span>
             <span
-              data-i18n="aboutHeroTitle2"
-              class="mt-2 md:mt-0 font-semibold shimmer-text block md:inline"
+              data-i18n="blogHeroTitle2"
+              class="block mt-2 font-semibold md:mt-0 shimmer-text md:inline"
             >
               OF EXPERT SKINCARE
             </span>
@@ -376,13 +374,13 @@
 
           <!-- CTA Buttons -->
           <div
-            class="flex flex-col w-fit gap-4 sm:flex-row md:gap-5 fade-in-up-delay-2 justify-start"
+            class="flex flex-col justify-start gap-4 w-fit sm:flex-row md:gap-5 fade-in-up-delay-2"
           >
             <a href="booking.html" class="w-full sm:w-auto">
               <button
                 class="w-full sm:w-auto px-8 md:px-10 lg:px-12 py-4 md:py-5 text-sm md:text-base uppercase tracking-[0.15rem] cursor-pointer transition-all duration-[400ms] ease-in-out bg-transparent border-2 border-white text-white relative overflow-hidden font-semibold hover:bg-white hover:text-black hover:-translate-y-1.5 hover:shadow-[0_15px_50px_rgba(255,255,255,0.2)]"
               >
-                <span data-i18n="bookConsultation" class="relative z-[1]">
+                <span data-i18n="heroBtn1" class="relative z-[1]">
                   Book Consultation
                 </span>
               </button>
@@ -614,7 +612,7 @@
       <div class="container relative z-10 px-8 mx-auto max-w-7xl">
         <div class="grid items-start grid-cols-1 gap-16 md:grid-cols-3">
           <!-- Address Section -->
-          <div class="text-center md:text-left fade-in-up">
+          <div class="text-start md:text-start fade-in-up">
             <h3
               data-i18n="footerAddress"
               class="mb-8 text-2xl font-light tracking-wide text-gold"
@@ -662,7 +660,7 @@
           </div>
 
           <!-- Contacts Section -->
-          <div class="text-center md:text-right fade-in-up">
+          <div class="items-end text-end md:text-end fade-in-up">
             <h3
               data-i18n="footerContacts"
               class="mb-8 text-2xl font-light tracking-wide text-gold"

@@ -37,6 +37,10 @@ const translations = {
     servicesSubtitle:
       "Enhancing your natural beauty through advanced cosmetic and dermatological procedures.",
     viewDetails: "VIEW DETAILS",
+    servicesHeroTitle1: "Aesthetic &",
+    servicesHeroTitle2: "Surgical Services",
+    servicesHeroDesc:
+      "From non-invasive treatments to advanced surgical procedures,discover comprehensive solutions tailored to enhance your natural beauty and boost your confidence.",
 
     // Service Descriptions
     faceliftDesc:
@@ -53,6 +57,8 @@ const translations = {
       "Injectable treatments like Botox and dermal fillers offer quick, non-surgical solutions to reduce wrinkles and restore facial volume. These minimally invasive procedures provide natural-looking results with little to no downtime. Refresh your appearance and turn back the clock effortlessly.",
 
     // Videos Section
+    videosHeroTitle1: "TRANSFORMATIONS",
+    videosHeroTitle2: "THAT SPEAK FOR THEMSELVES",
     videosBadge: "WATCH & LEARN",
     videosTitle1: "Transformation Stories",
     videosTitle2: "in Motion",
@@ -89,6 +95,8 @@ const translations = {
     bookAppointment: "Book Appointment",
 
     // About Section
+    aboutHeroTitle1: "MEET THE EXPERT",
+    aboutHeroTitle2: "BEHIND THE TRANSFORMATION",
     aboutBadge: "DR. REHAM HAMED",
     aboutTitle1: "BOARD CERTIFIED,",
     aboutTitle2: "WORLD-RENOWNED",
@@ -102,6 +110,8 @@ const translations = {
     stats4: "Professionalism & Love",
 
     // Blog Section
+    blogHeroTitle1: "UNLOCK THE SECRETS",
+    blogHeroTitle2: "OF EXPERT SKINCARE",
     blogTitle: "From the Blog",
     blogCategory1: "AESTHETICS",
     blogCategory2: "NEWS",
@@ -117,6 +127,32 @@ const translations = {
     testimonialsSubtitle: "More than 250 five-star reviews on Google",
     seeMore: "See More",
     seeLess: "See Less",
+
+    // Contact Us
+    contactUsHeroTitle1: "GET IN TOUCH WITH",
+    contactUsHeroTitle2: "YOUR SKIN EXPERTS",
+    contactUsTitle: "Let's Connect",
+    contactUsDesc:
+      "Schedule your consultation today and discover how we can help you achieve your aesthetic goals with personalized care and expertise.",
+    contactUsFormTitle: "Send us a Message",
+    contactUsPhone: "Phone",
+    contactUsEmail: "Email",
+    contactUsLocation: "Location",
+    contactUsWhatsapp: "WhatsApp",
+    chatWithUs: "Chat With Us",
+    followUs: "Follow Us",
+    subject: "Subject",
+    message: "Message",
+    selectSubject: "Select a subject",
+    consultation: "Consultation Request",
+    appointment: "Appointment Booking",
+    treatmentInquiry: "Treatment Inquiry",
+    feedback: "Feedback",
+    other: "Other",
+    sendMessage: "Send Message",
+    // Map Section
+    mapHeroTitle1: "Visit Our Clinic",
+    mapHeroTitle2: "Find Us in Riyadh, Saudi Arabia",
 
     // Booking Section
     bookingBadge: "ENHANCE YOUR NATURAL GLOW",
@@ -180,6 +216,10 @@ const translations = {
     servicesSubtitle:
       "تعزيز جمالك الطبيعي من خلال إجراءات تجميلية وجلدية متقدمة.",
     viewDetails: "عرض التفاصيل",
+    servicesHeroTitle1: "الخدمات التجميلية و",
+    servicesHeroTitle2: "الجراحة",
+    servicesHeroDesc:
+      "من العلاجات غير الجراحية إلى الإجراءات الجراحية المتقدمة، اكتشف حلولاً شاملة مصممة خصيصًا لتعزيز جمالك الطبيعي وتعزيز ثقتك بنفسك.",
 
     // Service Descriptions
     faceliftDesc:
@@ -196,6 +236,8 @@ const translations = {
       "علاجات الحقن مثل البوتوكس والفيلر توفر حلولاً سريعة وغير جراحية لتقليل التجاعيد واستعادة حجم الوجه. توفر هذه الإجراءات الأقل توغلاً نتائج طبيعية المظهر مع وقت توقف قليل أو معدوم. جددي مظهرك بسهولة.",
 
     // Videos Section
+    videosHeroTitle1: "التحولات",
+    videosHeroTitle2: "التي تتحدث عن نفسها",
     videosBadge: "شاهدي وتعلمي",
     videosTitle1: "قصص التحول",
     videosTitle2: "في حركة",
@@ -231,6 +273,8 @@ const translations = {
     bookAppointment: "احجزي موعد",
 
     // About Section
+    aboutHeroTitle1: "تعرف على الخبير",
+    aboutHeroTitle2: "وراء التحول",
     aboutBadge: "د. ريهام حامد",
     aboutTitle1: "معتمدة من البورد،",
     aboutTitle2: "ذات شهرة عالمية",
@@ -244,6 +288,8 @@ const translations = {
     stats4: "احترافية وحب",
 
     // Blog Section
+    blogHeroTitle1: "اكتشف أسرار",
+    blogHeroTitle2: "العناية بالبشرة على يد خبراء",
     blogTitle: "من المدونة",
     blogCategory1: "التجميل",
     blogCategory2: "الأخبار",
@@ -259,6 +305,32 @@ const translations = {
     testimonialsSubtitle: "أكثر من 250 تقييم خمس نجوم على جوجل",
     seeMore: "عرض المزيد",
     seeLess: "عرض أقل",
+
+    // Contact Us
+    contactUsHeroTitle1: "تواصل مع",
+    contactUsHeroTitle2: "خبراء البشرة لديك",
+    contactUsTitle: "دعنا نتواصل",
+    contactUsDesc:
+      "حدد موعد استشارتك اليوم واكتشف كيف يمكننا مساعدتك في تحقيق أهدافك الجمالية من خلال الرعاية الشخصية والخبرة. للتواصل معنا وتعرف كيف يمكننا مساعدتك في تحقيق الأساليب الخاصة بك مع الحضارات والمساعدة الشخصية.",
+    contactUsFormTitle: "أرسل لنا رسالة",
+    contactUsPhone: "الهاتف",
+    contactUsEmail: "البريد الالكتروني",
+    contactUsLocation: "العنوان",
+    contactUsWhatsapp: "الواتساب",
+    chatWithUs: "راسلنا",
+    followUs: "تابعنا",
+    subject: "الموضوع",
+    message: "رسالة",
+    selectSubject: "اختر موضوع",
+    consultation: "استشارة",
+    appointment: "موعد",
+    treatmentInquiry: "تجربة العلاج",
+    feedback: "ردود",
+    other: "أخرى",
+    sendMessage: "أرسل رسالة",
+    // Map Section
+    mapHeroTitle1: "تفضل بزيارة عيادتنا",
+    mapHeroTitle2: "اعثر علينا في الرياض، المملكة العربية السعودية",
 
     // Booking Section
     bookingBadge: "عززي توهجك الطبيعي",
