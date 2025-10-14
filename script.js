@@ -1,5 +1,7 @@
-// Mobile Menu Toggle
-(function () {
+// ============================================
+// MOBILE MENU FUNCTIONALITY
+// ============================================
+(function initializeMobileMenu() {
   const mobileMenuBtn = document.getElementById("mobileMenuBtn");
   const mobileMenuOverlay = document.getElementById("mobileMenuOverlay");
   const mobileMenu = document.getElementById("mobileMenu");
@@ -8,6 +10,13 @@
   if (!mobileMenuBtn || !mobileMenuOverlay || !mobileMenu || !closeMobileMenu) {
     console.error("Mobile menu elements not found");
     return;
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.add("translate-x-full");
+    setTimeout(() => {
+      mobileMenuOverlay.classList.add("hidden");
+    }, 300);
   }
 
   // Open menu
@@ -20,14 +29,6 @@
     }, 10);
   });
 
-  // Close menu function
-  function closeMenu() {
-    mobileMenu.classList.add("translate-x-full");
-    setTimeout(() => {
-      mobileMenuOverlay.classList.add("hidden");
-    }, 300);
-  }
-
   // Close button
   closeMobileMenu.addEventListener("click", (e) => {
     e.preventDefault();
@@ -35,14 +36,14 @@
     closeMenu();
   });
 
-  // Close when clicking on overlay (outside menu)
+  // Close when clicking overlay
   mobileMenuOverlay.addEventListener("click", (e) => {
     if (e.target === mobileMenuOverlay) {
       closeMenu();
     }
   });
 
-  // Close menu when clicking on a link
+  // Close menu when clicking links
   const mobileLinks = mobileMenu.querySelectorAll("a");
   mobileLinks.forEach((link) => {
     link.addEventListener("click", () => {
@@ -51,7 +52,9 @@
   });
 })();
 
-// Parallax effect for particles
+// ============================================
+// PARALLAX EFFECT FOR PARTICLES
+// ============================================
 const particles = document.querySelectorAll(".particle");
 document.addEventListener("mousemove", (e) => {
   particles.forEach((particle, index) => {
@@ -62,17 +65,9 @@ document.addEventListener("mousemove", (e) => {
   });
 });
 
-// Service items click handler
-const serviceItems = document.querySelectorAll(".service-item, a[href^='#']");
-serviceItems.forEach((item) => {
-  item.addEventListener("click", (e) => {
-    const serviceName = item.querySelector("span")?.textContent;
-    if (serviceName) {
-      console.log("Service selected:", serviceName);
-    }
-  });
-});
-
+// ============================================
+// SERVICE TABS FUNCTIONALITY
+// ============================================
 const serviceTabs = document.querySelectorAll(".service-tab");
 const serviceCards = document.querySelectorAll(".service-card");
 
@@ -97,28 +92,22 @@ serviceTabs.forEach((tab) => {
   });
 });
 
-// Before and After Image Slider
+// ============================================
+// BEFORE/AFTER IMAGE SLIDER
+// ============================================
 document.addEventListener("DOMContentLoaded", () => {
   const wrapper = document.querySelector(".before-after-wrapper");
-
   if (!wrapper) return;
 
   const overlay = wrapper.querySelector(".before-after-overlay");
   const slider = wrapper.querySelector(".before-after-slider");
-
   let isDragging = false;
 
   const updatePosition = (x) => {
     const rect = wrapper.getBoundingClientRect();
     let position = ((x - rect.left) / rect.width) * 100;
-
-    // Limit between 0% and 100%
     position = Math.max(0, Math.min(100, position));
-
-    // Update slider position
     slider.style.left = position + "%";
-
-    // Update overlay clip-path
     overlay.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
   };
 
@@ -135,17 +124,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const onMove = (e) => {
     if (!isDragging) return;
-
     const x = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
     updatePosition(x);
   };
 
-  // Mouse Events
+  // Mouse events
   slider.addEventListener("mousedown", startDragging);
   document.addEventListener("mousemove", onMove);
   document.addEventListener("mouseup", stopDragging);
 
-  // Touch Events
+  // Touch events
   slider.addEventListener("touchstart", startDragging, { passive: false });
   document.addEventListener("touchmove", onMove, { passive: false });
   document.addEventListener("touchend", stopDragging);
@@ -156,7 +144,38 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Booking Form Validation & Toast Message
+// ============================================
+// BOOKING FORM & TOAST MESSAGES
+// ============================================
+function showToast(message, type) {
+  const toast = document.getElementById("toastMessage");
+  if (!toast) return;
+
+  toast.className =
+    "fixed z-50 px-6 py-4 font-semibold tracking-wide text-center text-white transition-all duration-500 transform -translate-x-1/2 rounded-lg shadow-lg opacity-0 top-6 left-1/2";
+
+  if (type === "error") {
+    toast.classList.add("bg-red-600");
+  } else {
+    toast.classList.add("bg-[#daa520]");
+  }
+
+  toast.textContent = message;
+  toast.classList.remove("hidden");
+  setTimeout(() => {
+    toast.classList.remove("opacity-0", "-translate-y-4");
+    toast.classList.add("opacity-100", "translate-y-0");
+  }, 50);
+
+  setTimeout(() => {
+    toast.classList.add("opacity-0", "-translate-y-4");
+    setTimeout(() => {
+      toast.classList.add("hidden");
+    }, 500);
+  }, 3000);
+}
+
+// Simple form handler
 const simpleForm = document.querySelector("form");
 if (simpleForm) {
   simpleForm.addEventListener("submit", function (e) {
@@ -170,21 +189,18 @@ if (simpleForm) {
   });
 }
 
+// Booking form validation
 document.addEventListener("DOMContentLoaded", () => {
   const bookingForm = document.querySelector("#booking form");
-  const toast = document.getElementById("toastMessage");
-
   if (!bookingForm) return;
 
   bookingForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // Get form values
     const name = bookingForm.querySelector('input[type="text"]').value;
     const treatment = bookingForm.querySelector("select").value;
     const date = bookingForm.querySelector('input[type="date"]').value;
 
-    // Basic validation
     if (!name.trim()) {
       showToast("Please enter your name ❌", "error");
       return;
@@ -200,53 +216,57 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Success message
     showToast(
       `✅ Thank you ${name}! Your appointment has been submitted successfully.`,
       "success"
     );
-
-    // Reset form
     bookingForm.reset();
   });
+});
 
-  function showToast(message, type) {
-    if (!toast) return;
+// Contact form handler
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-    // Set color based on message type
-    toast.className =
-      "fixed z-50 px-6 py-4 font-semibold tracking-wide text-center text-white transition-all duration-500 transform -translate-x-1/2 rounded-lg shadow-lg opacity-0 top-6 left-1/2";
+    const name = contactForm.querySelector('input[name="name"]').value;
+    const email = contactForm.querySelector('input[name="email"]').value;
+    const subject = contactForm.querySelector('select[name="subject"]').value;
+    const message = contactForm.querySelector('textarea[name="message"]').value;
 
-    if (type === "error") {
-      toast.classList.add("bg-red-600");
-    } else {
-      toast.classList.add("bg-[#daa520]");
+    if (!name.trim()) {
+      showToast("Please enter your name ❌", "error");
+      return;
     }
 
-    // Show message
-    toast.textContent = message;
-    toast.classList.remove("hidden");
-    setTimeout(() => {
-      toast.classList.remove("opacity-0", "-translate-y-4");
-      toast.classList.add("opacity-100", "translate-y-0");
-    }, 50);
+    if (!email.trim()) {
+      showToast("Please enter your email ❌", "error");
+      return;
+    }
 
-    // Hide after 3 seconds
-    setTimeout(() => {
-      toast.classList.add("opacity-0", "-translate-y-4");
-      setTimeout(() => {
-        toast.classList.add("hidden");
-      }, 500);
-    }, 3000);
-  }
-});
+    if (!subject) {
+      showToast("Please select a subject ❌", "error");
+      return;
+    }
+
+    if (!message.trim()) {
+      showToast("Please enter a message ❌", "error");
+      return;
+    }
+
+    showToast(
+      `✅ Thank you ${name}! Your message has been sent successfully.`,
+      "success"
+    );
+    contactForm.reset();
+  });
+}
 
 // ============================================
 // TESTIMONIALS SECTION
 // ============================================
-
-// Get current language for testimonials
-let currentLang = localStorage.getItem("language") || "en";
+let currentLang = localStorage.getItem("selectedLanguage") || "en";
 let testimonials = testimonialsData[currentLang];
 
 const prevBtn = document.getElementById("prevBtn");
@@ -282,7 +302,6 @@ if (prevBtn && nextBtn && indicatorsContainer) {
   function updateTestimonial(index) {
     const testimonial = testimonials[index];
     const textElement = document.getElementById(`text-${index + 1}`);
-
     if (!textElement) return;
 
     const truncatedText = truncateText(testimonial.fullText, charLimit);
@@ -302,7 +321,6 @@ if (prevBtn && nextBtn && indicatorsContainer) {
       textElement.appendChild(btn);
     }
 
-    // Update client info
     const nameElement = document.getElementById(`name-${index + 1}`);
     const procedureElement = document.getElementById(`procedure-${index + 1}`);
     const imgElement = document.getElementById(`img-${index + 1}`);
@@ -372,15 +390,13 @@ if (prevBtn && nextBtn && indicatorsContainer) {
   nextBtn.addEventListener("click", nextTestimonial);
   prevBtn.addEventListener("click", prevTestimonial);
 
-  // Initialize
   createIndicators();
   showTestimonial(0);
 }
 
 // ============================================
-// SERVICES BAR - DYNAMIC TRANSLATION
+// SERVICES BAR
 // ============================================
-
 function getServicesList(lang) {
   return [
     translations[lang].serviceFacelift,
@@ -414,16 +430,13 @@ function updateServicesBar(lang) {
   servicesBar.innerHTML = "";
   const services = getServicesList(lang);
 
-  // Add original content
   services.forEach((service) => {
     servicesBar.appendChild(createServiceItem(service));
   });
 
-  // Calculate and clone for infinite scroll
   setTimeout(() => {
     const contentWidth = servicesBar.scrollWidth;
     const viewportWidth = window.innerWidth;
-
     const copies = Math.ceil(viewportWidth / contentWidth) + 2;
     const originalContent = servicesBar.innerHTML;
 
@@ -432,7 +445,7 @@ function updateServicesBar(lang) {
     }
 
     const totalCopies = copies + 1;
-    const animationDuration = 60;
+    const animationDuration = 150;
 
     servicesBar.style.animation = `scrollServices ${animationDuration}s linear infinite`;
 
@@ -453,7 +466,9 @@ function updateServicesBar(lang) {
   }, 100);
 }
 
-// Animate elements on scroll
+// ============================================
+// SCROLL ANIMATIONS
+// ============================================
 const observerOptions = {
   threshold: 0.1,
   rootMargin: "0px 0px -50px 0px",
@@ -472,6 +487,9 @@ document.querySelectorAll(".fade-in-up").forEach((el) => {
   observer.observe(el);
 });
 
+// ============================================
+// SCROLL TO TOP BUTTON
+// ============================================
 const scrollBtn = document.querySelector(".scroll-top-btn");
 
 const handleScroll = () => {
@@ -487,128 +505,12 @@ const handleScroll = () => {
 handleScroll();
 window.addEventListener("scroll", handleScroll);
 
-const bookingSection = document.querySelector(".booking-section");
-if (bookingSection) {
-  bookingSection.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const formMessage = document.getElementById("formMessage");
-    const nameInput = this.querySelector('input[type="text"]');
-    const emailInput = this.querySelector('input[type="email"]');
-    const treatmentSelect = this.querySelectorAll("select")[0];
-    const dateInput = this.querySelector('input[type="date"]');
-
-    if (!nameInput.value.trim()) {
-      alert("Please enter your name");
-      return;
-    }
-
-    if (!emailInput.value.trim()) {
-      alert("Please enter your email");
-      return;
-    }
-
-    if (!treatmentSelect.value) {
-      alert("Please select a treatment");
-      return;
-    }
-
-    if (!dateInput.value) {
-      alert("Please select a date");
-      return;
-    }
-
-    formMessage.classList.remove("hidden");
-    setTimeout(() => {
-      formMessage.classList.add("hidden");
-      this.reset();
-    }, 3000);
-  });
-}
-
-// Contact Form Submission
-const contactForm = document.getElementById("contactForm");
-const toast = document.getElementById("toastMessage");
-
-if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const name = contactForm.querySelector('input[name="name"]').value;
-    const email = contactForm.querySelector('input[name="email"]').value;
-    const subject = contactForm.querySelector('select[name="subject"]').value;
-    const message = contactForm.querySelector('textarea[name="message"]').value;
-
-    if (!name.trim()) {
-      showToast("Please enter your name ❌", "error");
-      return;
-    }
-
-    if (!email.trim()) {
-      showToast("Please enter your email ❌", "error");
-      return;
-    }
-
-    if (!subject) {
-      showToast("Please select a subject ❌", "error");
-      return;
-    }
-
-    if (!message.trim()) {
-      showToast("Please enter a message ❌", "error");
-      return;
-    }
-
-    showToast(
-      `✅ Thank you ${name}! Your message has been sent successfully.`,
-      "success"
-    );
-    contactForm.reset();
-  });
-}
-
-function showToast(message, type) {
-  if (!toast) return;
-
-  toast.className =
-    "fixed z-50 px-6 py-4 font-semibold tracking-wide text-center text-white transition-all duration-500 transform -translate-x-1/2 rounded-lg shadow-lg opacity-0 top-6 left-1/2";
-
-  if (type === "error") {
-    toast.classList.add("bg-red-600");
-  } else {
-    toast.classList.add("bg-gold");
-  }
-
-  toast.textContent = message;
-  toast.classList.remove("hidden");
-  setTimeout(() => {
-    toast.classList.remove("opacity-0", "-translate-y-4");
-    toast.classList.add("opacity-100", "translate-y-0");
-  }, 50);
-
-  setTimeout(() => {
-    toast.classList.add("opacity-0", "-translate-y-4");
-    setTimeout(() => {
-      toast.classList.add("hidden");
-    }, 500);
-  }, 3000);
-}
-
 // ============================================
-// LANGUAGE SWITCHER
+// LANGUAGE SWITCHER - FIXED VERSION
 // ============================================
-
-// Initialize language on page load
-document.addEventListener("DOMContentLoaded", () => {
-  applyLanguage(currentLang);
-  updateServicesBar(currentLang);
-  updateLanguageButtons(currentLang);
-});
-
-// Function to change language
 function changeLanguage(lang) {
   currentLang = lang;
-  localStorage.setItem("language", lang);
+  localStorage.setItem("selectedLanguage", lang);
   applyLanguage(lang);
 
   // Update testimonials
@@ -622,27 +524,25 @@ function changeLanguage(lang) {
   // Update services bar
   updateServicesBar(lang);
 
-  // Update button states
+  // Update button states - FIXED
   updateLanguageButtons(lang);
 }
 
-// Function to apply language to all elements
 function applyLanguage(lang) {
   // Set HTML attributes
-  document.documentElement.lang = lang;
   document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  document.documentElement.lang = lang;
 
-  // ✅ ضبط اتجاه الحقول (inputs / textarea)
+  // Fix input/textarea direction
   document.querySelectorAll("input, textarea").forEach((el) => {
     el.style.textAlign = lang === "ar" ? "right" : "left";
     el.style.direction = lang === "ar" ? "rtl" : "ltr";
   });
 
-  // Update all elements with data-i18n attribute
+  // Update all translatable elements
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.getAttribute("data-i18n");
     if (translations[lang] && translations[lang][key]) {
-      // Check if element is input placeholder
       if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
         element.placeholder = translations[lang][key];
       } else {
@@ -651,7 +551,7 @@ function applyLanguage(lang) {
     }
   });
 
-  // Update body class for RTL/LTR specific styles
+  // Update body class
   if (lang === "ar") {
     document.body.classList.add("rtl");
     document.body.classList.remove("ltr");
@@ -664,17 +564,14 @@ function applyLanguage(lang) {
   updateSelectOptions(lang);
 }
 
-// Function to update select dropdown options
 function updateSelectOptions(lang) {
   const treatmentSelects = document.querySelectorAll("select");
   treatmentSelects.forEach((select) => {
-    // Update "Select Treatment" option
     const selectOption = select.querySelector('option[value="treatment"]');
     if (selectOption) {
       selectOption.textContent = translations[lang].selectTreatment;
     }
 
-    // Update treatment options
     const options = {
       facelift: translations[lang].serviceFacelift,
       rhinoplasty: translations[lang].serviceRhinoplasty,
@@ -691,7 +588,6 @@ function updateSelectOptions(lang) {
       }
     });
 
-    // Update Hour/Minute selects
     const hourOption = document.querySelector('option[value="hour"]');
     const minuteOption = document.querySelector('option[value="minute"]');
     if (hourOption) hourOption.textContent = translations[lang].hour;
@@ -699,18 +595,25 @@ function updateSelectOptions(lang) {
   });
 }
 
-// Function to update language button states
 function updateLanguageButtons(lang) {
+  // Update ALL buttons (desktop and mobile)
   document.querySelectorAll(".lang-btn").forEach((btn) => {
-    if (btn.dataset.lang === lang) {
-      // اخفي الزرار الخاص باللغة الحالية
+    const btnLang = btn.getAttribute("data-lang");
+    if (btnLang === lang) {
       btn.style.display = "none";
     } else {
-      // اظهر الزرار التاني
       btn.style.display = "inline-block";
     }
   });
 }
 
-// Expose changeLanguage function globally
+// Initialize language on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("selectedLanguage") || "en";
+  applyLanguage(savedLang);
+  updateServicesBar(savedLang);
+  updateLanguageButtons(savedLang);
+});
+
+// Expose changeLanguage globally
 window.changeLanguage = changeLanguage;

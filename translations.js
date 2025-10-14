@@ -350,3 +350,8 @@ const testimonialsData = {
     },
   ],
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("selectedLanguage") || "en";
+  changeLanguage(savedLang);
+});

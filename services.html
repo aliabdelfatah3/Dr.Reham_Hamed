@@ -107,17 +107,17 @@
           <div class="items-center hidden gap-2 lg:flex">
             <button
               onclick="changeLanguage('en')"
-              class="px-4 py-2 text-sm text-white transition-all duration-300 border lang-btn border-white/30 hover:bg-white/10"
+              class="px-4 py-2 text-sm text-white cursor-pointer transition-all duration-300 border lang-btn border-white/30 hover:bg-white/10"
               data-lang="en"
             >
               EN
             </button>
             <button
               onclick="changeLanguage('ar')"
-              class="px-4 py-2 text-sm text-white transition-all duration-300 border lang-btn border-white/30 hover:bg-white/10"
+              class="px-4 py-2 text-sm text-white cursor-pointer transition-all duration-300 border lang-btn border-white/30 hover:bg-white/10"
               data-lang="ar"
             >
-              عربي
+              AR
             </button>
           </div>
           <!-- CTA Button - Hidden on mobile, shown in menu -->
@@ -321,7 +321,7 @@
       </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION - SERVICES -->
     <section
       class="relative flex flex-col min-h-screen overflow-hidden"
       id="heroSection"
@@ -345,53 +345,52 @@
             class="particle absolute w-[100px] h-[100px] md:w-[150px] md:h-[150px] bottom-[20%] left-1/2 rounded-full bg-[radial-gradient(circle,rgba(218,165,32,0.8)_0%,transparent_70%)]"
           ></div>
         </div>
+        <!-- Background Image for Services Page -->
         <div
-          class="absolute inset-0 bg-top bg-no-repeat hero-bg-image opacity-60"
+          class="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-30"
+          style="background-image: url('images/Facelift.jpg')"
         ></div>
       </div>
 
       <!-- Main Content -->
       <div
-        class="relative z-10 flex flex-col items-start justify-end flex-1 px-6 pb-24 text-left md:px-12 lg:px-24 xl:px-36 md:pb-32 lg:pb-44"
+        class="relative z-10 flex flex-col items-start justify-center flex-1 px-6 text-left md:px-12 lg:px-24 xl:px-36"
       >
-        <div>
+        <div class="max-w-5xl">
+          <!-- Main Title -->
           <h1
-            data-i18n="heroTitle1"
-            class="text-3xl md:text-4xl lg:text-5xl xl:text-[3rem] font-light text-white leading-tight tracking-wider uppercase opacity-0 fade-in-up"
+            class="flex flex-col flex-wrap items-left justify-left text-left md:text-left text-3xl md:text-4xl lg:text-5xl xl:text-[3rem] font-light text-white leading-tight tracking-wider uppercase opacity-0 fade-in-up w-fit md:w-fit mb-6 md:mb-8"
           >
-            FEEL YOUR BEST
+            <span data-i18n="servicesHeroTitle1">AESTHETIC &</span>
             <span
-              data-i18n="heroTitle2"
-              class="block font-semibold shimmer-text"
-              >LOOK YOUR BEST</span
+              data-i18n="servicesHeroTitle2"
+              class="block mt-2 font-semibold shimmer-text"
             >
+              SURGICAL EXCELLENCE
+            </span>
           </h1>
+
+          <!-- Description -->
           <p
-            data-i18n="heroDesc"
-            class="text-base md:text-lg lg:text-xl text-white/80 mb-8 md:mb-10 lg:mb-12 max-w-full md:max-w-[450px] lg:max-w-[500px] leading-relaxed fade-in-up-delay-1"
+            data-i18n="servicesHeroDesc"
+            class="text-base md:text-lg lg:text-xl text-white/80 mb-12 md:mb-16 max-w-3xl leading-relaxed fade-in-up-delay-1"
           >
-            The leading destination for dermatology and aesthetic treatments in
-            Riyadh.
+            From non-invasive treatments to advanced surgical procedures,
+            discover comprehensive solutions tailored to enhance your natural
+            beauty and boost your confidence.
           </p>
+
+          <!-- CTA Buttons -->
           <div
-            class="flex flex-col gap-4 sm:flex-row md:gap-5 fade-in-up-delay-2"
+            class="flex flex-col w-fit gap-4 sm:flex-row md:gap-5 fade-in-up-delay-2 justify-start"
           >
-            <a href="#booking" class="w-full sm:w-auto">
+            <a href="booking.html" class="w-full sm:w-auto">
               <button
-                class="w-full sm:w-auto px-6 md:px-8 lg:px-10 py-4 md:py-5 text-sm md:text-base uppercase tracking-[0.15rem] cursor-pointer transition-all duration-[400ms] ease-in-out border-2 border-[#DAA520] relative overflow-hidden font-semibold bg-gradient-to-br from-[#DAA520] to-[#8B4513] text-white shadow-[0_10px_40px_rgba(218,165,32,0.3)] hover:-translate-y-1.5 hover:shadow-[0_15px_50px_rgba(218,165,32,0.5)]"
+                class="w-full sm:w-auto px-8 md:px-10 lg:px-12 py-4 md:py-5 text-sm md:text-base uppercase tracking-[0.15rem] cursor-pointer transition-all duration-[400ms] ease-in-out bg-transparent border-2 border-white text-white relative overflow-hidden font-semibold hover:bg-white hover:text-black hover:-translate-y-1.5 hover:shadow-[0_15px_50px_rgba(255,255,255,0.2)]"
               >
-                <span data-i18n="heroBtn1" class="relative z-[1]"
-                  >Book Consultation</span
-                >
-              </button>
-            </a>
-            <a href="#services" class="w-full sm:w-auto">
-              <button
-                class="w-full sm:w-auto px-6 md:px-8 lg:px-10 py-4 md:py-5 text-sm md:text-base uppercase tracking-[0.15rem] cursor-pointer transition-all duration-[400ms] ease-in-out bg-transparent border-2 border-white text-white relative overflow-hidden font-semibold hover:bg-white hover:text-black hover:-translate-y-1.5 hover:shadow-[0_15px_50px_rgba(255,255,255,0.2)]"
-              >
-                <span data-i18n="heroBtn2" class="relative z-[1]"
-                  >Find Your Procedure</span
-                >
+                <span data-i18n="bookConsultation" class="relative z-[1]">
+                  Book Consultation
+                </span>
               </button>
             </a>
           </div>
@@ -400,98 +399,7 @@
 
       <!-- Services Bar -->
       <div class="relative z-10 py-6 services-bar-wrapper md:py-8">
-        <div class="services-bar-content" id="servicesBar">
-          <div
-            class="flex items-center gap-1.5 text-white uppercase text-xs md:text-sm tracking-wider transition-all duration-300 cursor-default px-4 md:px-6 py-2 rounded-full no-underline whitespace-nowrap"
-          >
-            <svg
-              class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <circle cx="12" cy="12" r="7"></circle>
-              <circle cx="12" cy="12" r="3"></circle>
-            </svg>
-            <span>Facelift</span>
-          </div>
-          <div
-            class="flex items-center gap-1.5 text-white uppercase text-xs md:text-sm tracking-wider transition-all duration-300 cursor-default px-4 md:px-6 py-2 rounded-full no-underline whitespace-nowrap"
-          >
-            <svg
-              class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <circle cx="12" cy="12" r="7"></circle>
-              <circle cx="12" cy="12" r="3"></circle>
-            </svg>
-            <span>Rhinoplasty</span>
-          </div>
-          <div
-            class="flex items-center gap-1.5 text-white uppercase text-xs md:text-sm tracking-wider transition-all duration-300 cursor-default px-4 md:px-6 py-2 rounded-full no-underline whitespace-nowrap"
-          >
-            <svg
-              class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <circle cx="12" cy="12" r="7"></circle>
-              <circle cx="12" cy="12" r="3"></circle>
-            </svg>
-            <span>Mommy Makeover</span>
-          </div>
-          <div
-            class="flex items-center gap-1.5 text-white uppercase text-xs md:text-sm tracking-wider transition-all duration-300 cursor-default px-4 md:px-6 py-2 rounded-full no-underline whitespace-nowrap"
-          >
-            <svg
-              class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <circle cx="12" cy="12" r="7"></circle>
-              <circle cx="12" cy="12" r="3"></circle>
-            </svg>
-            <span>Tummy Tuck</span>
-          </div>
-          <div
-            class="flex items-center gap-1.5 text-white uppercase text-xs md:text-sm tracking-wider transition-all duration-300 cursor-default px-4 md:px-6 py-2 rounded-full no-underline whitespace-nowrap"
-          >
-            <svg
-              class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <circle cx="12" cy="12" r="7"></circle>
-              <circle cx="12" cy="12" r="3"></circle>
-            </svg>
-            <span>Liposuction</span>
-          </div>
-          <div
-            class="flex items-center gap-1.5 text-white uppercase text-xs md:text-sm tracking-wider transition-all duration-300 cursor-default px-4 md:px-6 py-2 rounded-full no-underline whitespace-nowrap"
-          >
-            <svg
-              class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <circle cx="12" cy="12" r="7"></circle>
-              <circle cx="12" cy="12" r="3"></circle>
-            </svg>
-            <span>Injectables</span>
-          </div>
-        </div>
+        <div class="services-bar-content" id="servicesBar"></div>
       </div>
     </section>
 
