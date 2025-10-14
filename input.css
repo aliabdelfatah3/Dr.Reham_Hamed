@@ -626,11 +626,7 @@ button {
    RTL SUPPORT - دعم اللغة العربية
    ============================================ */
 [dir="rtl"] {
-  text-align: right;
-}
-
-[dir="rtl"] .desktop-nav {
-  flex-direction: row-reverse;
+  text-align: end;
 }
 
 [dir="rtl"] .social-icon {
