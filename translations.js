@@ -59,7 +59,7 @@ const translations = {
     // Videos Section
     videosHeroTitle1: "TRANSFORMATIONS",
     videosHeroTitle2: "THAT SPEAK FOR THEMSELVES",
-    videosBadge: "WATCH & LEARN",
+    videosBadge: "Learn Through Every Frame",
     videosTitle1: "Transformation Stories",
     videosTitle2: "in Motion",
     videosSubtitle:
@@ -242,7 +242,7 @@ const translations = {
     // Videos Section
     videosHeroTitle1: "التحولات",
     videosHeroTitle2: "التي تتحدث عن نفسها",
-    videosBadge: "شاهدي وتعلمي",
+    videosBadge: "تعلم من خلال كل إطار",
     videosTitle1: "قصص التحول",
     videosTitle2: "في حركة",
     videosSubtitle: "شاهدي رحلات المرضى الحقيقية ورؤى الخبراء من د. ريهام حامد",

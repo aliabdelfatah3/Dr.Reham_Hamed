@@ -38,93 +38,103 @@
   <body>
     <!-- HEADER SECTION -->
     <header
-      class="absolute top-0 left-0 right-0 z-[1000] px-4 md:px-8 lg:px-16 py-4 md:py-6 flex flex-col transition-all duration-500 ease-in-out"
+      class="absolute top-0 left-0 right-0 z-[1000] px-4 md:px-8 lg:px-16 py-4 md:py-6 flex transition-all duration-500 ease-in-out"
       id="mainHeader"
     >
       <div class="flex flex-row items-center justify-between w-full">
-        <!-- Contact Information - Hidden on mobile -->
-        <div class="flex-col items-center hidden lg:flex">
-          <div
-            class="flex items-center cursor-default gap-2 text-white no-underline text-xs lg:text-sm transition-all duration-300 px-3 lg:px-4 py-2 rounded-full hover:text-[#DAA520] hover:bg-[#DAA520]/10 hover:-translate-y-0.5"
-          >
-            <svg
-              class="w-4 h-4 lg:w-[18px] lg:h-[18px]"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-              ></path>
-            </svg>
-            <span data-i18n="phone" class="whitespace-nowrap"
-              >+966 56 474 6005</span
-            >
-          </div>
-          <a
-            href="contactus.html"
-            class="flex items-center w-full gap-2 text-white no-underline text-xs lg:text-sm transition-all duration-300 px-3 lg:px-4 py-2 rounded-full hover:text-[#DAA520] hover:bg-[#DAA520]/10 hover:-translate-y-0.5"
-          >
-            <svg
-              class="w-4 h-4 lg:w-[18px] lg:h-[18px]"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-            <span data-i18n="locations" class="whitespace-nowrap"
-              >OUR LOCATIONS</span
-            >
-          </a>
-        </div>
-
         <!-- Logo - Centered on mobile -->
         <a
           href="/"
-          class="flex items-center gap-2 no-underline md:gap-3 lg:gap-4 lg:absolute lg:-translate-x-1/2 lg:left-1/2"
+          class="flex items-center gap-2 no-underline md:gap-3 lg:gap-4 lg:left-1/2"
         >
           <div
             data-i18n="doctorJob"
-            class="w-[35px] h-[35px] md:w-[45px] md:h-[45px] lg:w-[50px] lg:h-[50px] border-2 border-[#DAA520] rounded-full flex items-center justify-center text-lg md:text-xl lg:text-2xl text-[#DAA520] font-bold italic logo-glow"
+            class="w-[35px] h-[35px] md:w-[45px] md:h-[45px] lg:w-[50px] lg:h-[50px] border-2 border-[#DAA520] rounded-full flex items-center justify-center text-lg md:text-xl lg:text-xl text-[#DAA520] font-bold italic logo-glow [text-shadow:_2px_2px_4px_rgba(0,0,0,0.8)]"
           >
             DR
           </div>
           <div
             data-i18n="doctorName"
-            class="text-lg md:text-2xl lg:text-3xl font-light tracking-[0.2rem] md:tracking-[0.25rem] lg:tracking-[0.3rem] text-white uppercase"
+            class="text-lg md:text-2xl lg:text-2xl font-light tracking-[0.2rem] md:tracking-[0.25rem] lg:tracking-[0.3rem] text-white uppercase [text-shadow:_2px_2px_4px_rgba(0,0,0,0.8)]"
           >
             Reham Hamed
           </div>
         </a>
-
+        <!-- Desktop Navigation Menu -->
+        <nav
+          class="items-center justify-center hidden gap-6 desktop-nav lg:flex lg:gap-10"
+        >
+          <a
+            data-i18n="navHome"
+            href="/"
+            class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:start-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#68320c] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full drop-shadow-[text-shadow:_2px_2px_4px_rgba(0,0,0,0.8)]"
+            >Home</a
+          >
+          <a
+            data-i18n="navServices"
+            href="services.html"
+            class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:start-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full [text-shadow:_2px_2px_4px_rgba(0,0,0,0.8)]"
+            >Services</a
+          >
+          <a
+            data-i18n="navAbout"
+            href="aboutus.html"
+            class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:start-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full [text-shadow:_2px_2px_4px_rgba(0,0,0,0.8)]"
+            >About us</a
+          >
+          <a
+            data-i18n="navVideos"
+            href="videos.html"
+            class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:start-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full [text-shadow:_2px_2px_4px_rgba(0,0,0,0.8)]"
+            >Videos</a
+          >
+          <a
+            data-i18n="navBlogs"
+            href="blogs.html"
+            class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:start-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full [text-shadow:_2px_2px_4px_rgba(0,0,0,0.8)]"
+            >Blogs</a
+          >
+          <a
+            data-i18n="navContact"
+            href="contactus.html"
+            class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:start-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full [text-shadow:_2px_2px_4px_rgba(0,0,0,0.8)]"
+            >Contact us</a
+          >
+        </nav>
         <!-- Mobile Menu Toggle -->
         <div class="flex gap-5">
-          <!-- Language Switcher - يضاف قبل زرار Book a Visit -->
+          <!-- Language Switcher -->
           <div class="items-center hidden gap-2 lg:flex">
             <button
               onclick="changeLanguage('en')"
-              class="px-4 py-2 text-sm text-white transition-all duration-300 border cursor-pointer lang-btn border-white/30 hover:bg-white/10"
+              class="relative px-6 lg:px-2 py-2.5 lg:py-0 text-sm text-white transition-all duration-300 border cursor-pointer lang-btn border-white/30 hover:bg-white/10 [text-shadow:_2px_2px_4px_rgba(0,0,0,0.8)]"
               data-lang="en"
             >
-              EN
+              <img
+                class="absolute inset-0 -z-10 w-full h-full object-cover"
+                src="images/en.png"
+                alt="en-flag"
+              />
+              <h1
+                class="[text-shadow:_2px_2px_4px_rgba(0,0,0,0.8)] font-bold text-white"
+              >
+                EN
+              </h1>
             </button>
+
             <button
               onclick="changeLanguage('ar')"
-              class="px-4 py-2 text-sm text-white transition-all duration-300 border cursor-pointer lang-btn border-white/30 hover:bg-white/10"
+              class="px-6 lg:px-2 py-2.5 lg:py-0 text-sm text-white bg-green-700 transition-all duration-300 border-2 cursor-pointer lang-btn border-white/30 hover:bg-green-800 [text-shadow:_2px_2px_4px_rgba(0,0,0,0.8)]"
               data-lang="ar"
             >
               AR
             </button>
           </div>
-          <!-- CTA Button - Hidden on mobile, shown in menu -->
+          <!-- CTA Button -->
           <a href="booking.html" class="hidden lg:block">
             <button
               data-i18n="bookVisit"
-              class="px-6 lg:px-8 py-2.5 lg:py-3 bg-transparent border-2 border-[#DAA520] text-white uppercase tracking-wider cursor-pointer transition-all duration-[400ms] ease-in-out text-xs lg:text-sm font-semibold relative overflow-hidden hover:bg-[#DAA520] hover:text-black hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(218,165,32,0.4)]"
+              class="px-6 lg:px-8 py-2.5 lg:py-3 bg-transparent border-2 border-[#DAA520] text-white uppercase tracking-wider cursor-pointer transition-all duration-[400ms] ease-in-out text-xs lg:text-sm font-semibold relative overflow-hidden hover:bg-[#DAA520] hover:text-black hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(218,165,32,0.4)] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.8)]"
             >
               Book a Visit
             </button>
@@ -150,47 +160,6 @@
         </button>
       </div>
 
-      <!-- Desktop Navigation Menu -->
-      <nav
-        class="items-center justify-center hidden gap-6 mt-4 desktop-nav lg:flex lg:gap-10"
-      >
-        <a
-          data-i18n="navHome"
-          href="/"
-          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:start-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
-          >Home</a
-        >
-        <a
-          data-i18n="navServices"
-          href="services.html"
-          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:start-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
-          >Services</a
-        >
-        <a
-          data-i18n="navAbout"
-          href="aboutus.html"
-          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:start-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
-          >About us</a
-        >
-        <a
-          data-i18n="navVideos"
-          href="videos.html"
-          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:start-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
-          >Videos</a
-        >
-        <a
-          data-i18n="navBlogs"
-          href="blogs.html"
-          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:start-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
-          >Blogs</a
-        >
-        <a
-          data-i18n="navContact"
-          href="contactus.html"
-          class="text-white no-underline text-xs lg:text-sm uppercase tracking-wider relative py-2 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:start-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#DAA520] after:to-[#8B4513] after:transition-[width] after:duration-400 after:ease-in-out hover:text-[#DAA520] hover:after:w-full"
-          >Contact us</a
-        >
-      </nav>
       <!-- Mobile Menu Overlay -->
       <div
         id="mobileMenuOverlay"
@@ -323,7 +292,7 @@
 
     <!-- HERO SECTION - BLOGS -->
     <section
-      class="relative flex flex-col flex-1 min-h-screen overflow-hidden"
+      class="relative flex flex-col flex-1 min-h-[70vh] overflow-hidden"
       id="heroSection"
     >
       <!-- Background Layers -->
@@ -345,7 +314,7 @@
             class="particle absolute w-[100px] h-[100px] md:w-[150px] md:h-[150px] bottom-[20%] left-1/2 rounded-full bg-[radial-gradient(circle,rgba(218,165,32,0.8)_0%,transparent_70%)]"
           ></div>
         </div>
-        <!-- Background Image for About Page -->
+        <!-- Background Image -->
         <div
           class="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-30"
           style="background-image: url('images/blog1.jpg')"
@@ -369,29 +338,7 @@
               OF EXPERT SKINCARE
             </span>
           </h1>
-
-          <!-- Description -->
-
-          <!-- CTA Buttons -->
-          <div
-            class="flex flex-col justify-start gap-4 w-fit sm:flex-row md:gap-5 fade-in-up-delay-2"
-          >
-            <a href="booking.html" class="w-full sm:w-auto">
-              <button
-                class="w-full sm:w-auto px-8 md:px-10 lg:px-12 py-4 md:py-5 text-sm md:text-base uppercase tracking-[0.15rem] cursor-pointer transition-all duration-[400ms] ease-in-out bg-transparent border-2 border-white text-white relative overflow-hidden font-semibold hover:bg-white hover:text-black hover:-translate-y-1.5 hover:shadow-[0_15px_50px_rgba(255,255,255,0.2)]"
-              >
-                <span data-i18n="heroBtn1" class="relative z-[1]">
-                  Book Consultation
-                </span>
-              </button>
-            </a>
-          </div>
         </div>
-      </div>
-
-      <!-- Services Bar -->
-      <div class="relative z-10 py-6 services-bar-wrapper md:py-8">
-        <div class="services-bar-content" id="servicesBar"></div>
       </div>
     </section>
 
@@ -448,7 +395,6 @@
               </h3>
 
               <!-- Read More Link -->
-
               <a
                 data-i18n="readMore"
                 href="#blog-post-1"
@@ -505,7 +451,6 @@
               </h3>
 
               <!-- Read More Link -->
-
               <a
                 data-i18n="readMore"
                 href="#blog-post-2"
@@ -562,7 +507,6 @@
               </h3>
 
               <!-- Read More Link -->
-
               <a
                 data-i18n="readMore"
                 href="#blog-post-3"
@@ -586,8 +530,7 @@
             </div>
           </article>
         </div>
-
-       
+      </div>
     </section>
 
     <!-- FOOTER SECTION -->
@@ -714,9 +657,6 @@
                   class="text-white"
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  version="1.1"
-                  id="mdi-snapchat"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
