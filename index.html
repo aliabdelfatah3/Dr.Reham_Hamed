@@ -538,6 +538,54 @@
       </div>
 
       <div class="container relative z-10 px-4 mx-auto md:px-8 max-w-7xl">
+        <!-- Navigation Tabs - Mobile (Top) -->
+        <div
+          class="grid grid-cols-3 gap-0 overflow-hidden shadow-2xl lg:hidden"
+        >
+          <button
+            data-i18n="serviceFacelift"
+            class="service-tab active bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            data-target="facelift"
+          >
+            FACELIFT
+          </button>
+          <button
+            data-i18n="serviceRhinoplasty"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            data-target="rhinoplasty"
+          >
+            RHINO
+          </button>
+          <button
+            data-i18n="serviceMommy"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs overflow-hidden font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            data-target="mommy"
+          >
+            MOMMY
+          </button>
+          <button
+            data-i18n="serviceTummy"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            data-target="tummy"
+          >
+            TUMMY
+          </button>
+          <button
+            data-i18n="serviceLipo"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            data-target="lipo"
+          >
+            LIPO
+          </button>
+          <button
+            data-i18n="serviceInject"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            data-target="inject"
+          >
+            INJECT
+          </button>
+        </div>
+
         <!-- Service Cards Container -->
         <div class="relative overflow-hidden bg-white shadow-2xl">
           <div class="relative min-h-[600px] md:min-h-[650px]">
@@ -811,48 +859,48 @@
           </div>
         </div>
 
-        <!-- Navigation Tabs -->
+        <!-- Navigation Tabs - Desktop (Bottom) -->
         <div
-          class="grid grid-cols-3 gap-0 overflow-hidden shadow-2xl lg:grid-cols-6"
+          class="hidden grid-cols-6 gap-0 overflow-hidden shadow-2xl lg:grid"
         >
           <button
             data-i18n="serviceFacelift"
-            class="service-tab active bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            class="service-tab active bg-beige text-[#2c3e50] py-5 px-3 uppercase text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
             data-target="facelift"
           >
             FACELIFT
           </button>
           <button
             data-i18n="serviceRhinoplasty"
-            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
             data-target="rhinoplasty"
           >
             RHINOPLASTY
           </button>
           <button
             data-i18n="serviceMommy"
-            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm overflow-hidden font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-sm overflow-hidden font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
             data-target="mommy"
           >
-            Mommy <span class="hidden md:block">Makeover</span>
+            MOMMY MAKEOVER
           </button>
           <button
             data-i18n="serviceTummy"
-            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
             data-target="tummy"
           >
-            TummyTuck
+            TUMMY TUCK
           </button>
           <button
             data-i18n="serviceLipo"
-            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
             data-target="lipo"
           >
             LIPOSUCTION
           </button>
           <button
             data-i18n="serviceInject"
-            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
             data-target="inject"
           >
             INJECTABLES
@@ -1353,13 +1401,19 @@
         </div>
 
         <!-- Statistics Section -->
-        <div class="grid grid-cols-2 gap-8 mt-20 lg:grid-cols-4 fade-in-up">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-12 sm:mt-16 lg:mt-20 fade-in-up"
+        >
           <!-- Stat 1 -->
           <div class="text-center">
-            <div class="mb-4 text-6xl font-light text-white">15+</div>
+            <div
+              class="mb-2 sm:mb-4 text-4xl sm:text-5xl lg:text-6xl font-light text-white"
+            >
+              15+
+            </div>
             <div
               data-i18n="stats1"
-              class="text-sm tracking-wider uppercase text-white/60"
+              class="text-xs sm:text-sm md:text-base tracking-wider uppercase text-white/60"
             >
               Years in Business
             </div>
@@ -1367,10 +1421,14 @@
 
           <!-- Stat 2 -->
           <div class="text-center">
-            <div class="mb-4 text-6xl font-light text-white">25,000+</div>
+            <div
+              class="mb-2 sm:mb-4 text-4xl sm:text-5xl lg:text-6xl font-light text-white"
+            >
+              25,000+
+            </div>
             <div
               data-i18n="stats2"
-              class="text-sm tracking-wider uppercase text-white/60"
+              class="text-xs sm:text-sm md:text-base tracking-wider uppercase text-white/60"
             >
               Coolsculpting Cycles
             </div>
@@ -1378,10 +1436,14 @@
 
           <!-- Stat 3 -->
           <div class="text-center">
-            <div class="mb-4 text-6xl font-light text-white">15,000+</div>
+            <div
+              class="mb-2 sm:mb-4 text-4xl sm:text-5xl lg:text-6xl font-light text-white"
+            >
+              15,000+
+            </div>
             <div
               data-i18n="stats3"
-              class="text-sm tracking-wider uppercase text-white/60"
+              class="text-xs sm:text-sm md:text-base tracking-wider uppercase text-white/60"
             >
               Patients Cared For
             </div>
@@ -1389,10 +1451,14 @@
 
           <!-- Stat 4 -->
           <div class="text-center">
-            <div class="mb-4 text-6xl font-light text-white">100%</div>
+            <div
+              class="mb-2 sm:mb-4 text-4xl sm:text-5xl lg:text-6xl font-light text-white"
+            >
+              100%
+            </div>
             <div
               data-i18n="stats4"
-              class="text-sm tracking-wider uppercase text-white/60"
+              class="text-xs sm:text-sm md:text-base tracking-wider uppercase text-white/60"
             >
               Professionalism & Love
             </div>
@@ -1833,7 +1899,7 @@
                 <!-- Title -->
                 <h2
                   data-i18n="bookingTitle1"
-                  class="items-center mb-8 text-2xl font-light leading-tight text-white w-xl md:text-3xl lg:text-4xl md:mb-12"
+                  class="text-center px-4 sm:px-6 md:px-8 lg:px-12 mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light leading-snug sm:leading-tight text-white max-w-3xl mx-auto"
                 >
                   Take the next step and schedule an appointment today
                 </h2>
