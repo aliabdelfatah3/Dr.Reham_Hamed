@@ -361,10 +361,10 @@
           ></div>
         </div>
         <div
-          class="absolute inset-0 bg-no-repeat bg-cover hero-bg-image opacity-65"
+          class="absolute inset-0 bg-no-repeat bg-cover hero-bg-image opacity-65 blur-lg md:blur-none"
         ></div>
         <div
-          class="absolute inset-0 bg-gradient-to-r from-[#a49b95] to-80% to-transparent"
+          class="absolute inset-0 lg:bg-gradient-to-r lg:from-[#a49b95] lg:to-80% lg:to-transparent"
         ></div>
       </div>
 
@@ -373,6 +373,9 @@
         class="relative z-10 flex flex-col items-start justify-end flex-1 px-6 pb-24 text-left md:px-12 lg:px-24 xl:px-36 md:pb-32 lg:pb-44"
       >
         <div>
+          <div class="md:hidden w-full overflow-hidden mt-20 pb-10">
+            <img src="images/herosection.png" alt="dr image" class="w-full" />
+          </div>
           <h1
             data-i18n="heroTitle1"
             class="text-3xl md:text-4xl lg:text-5xl xl:text-[3rem] font-light text-white leading-tight tracking-wider uppercase opacity-0 fade-in-up"

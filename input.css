@@ -124,9 +124,15 @@
    ============================================ */
 .hero-bg-image {
   background-image: url("images/rightbg.jpg");
-  background-position: center;
+  background-position: right;
 }
 
+@media (min-width: 1024px) {
+  .hero-bg-image {
+    background-image: url("images/rightbg.jpg");
+    background-position: center;
+  }
+}
 .testimonial-bg-image {
   background-image: url("images/Testmonials.jpg");
 }
