@@ -37,7 +37,7 @@ const translations = {
     servicesSubtitle:
       "Enhancing your natural beauty through advanced cosmetic and dermatological procedures.",
     viewDetails: "VIEW DETAILS",
-    servicesHeroTitle1: "Aesthetic &",
+    servicesHeroTitle1: "Aesthetic & ",
     servicesHeroTitle2: "Surgical Services",
     servicesHeroDesc:
       "From non-invasive treatments to advanced surgical procedures,discover comprehensive solutions tailored to enhance your natural beauty and boost your confidence.",
