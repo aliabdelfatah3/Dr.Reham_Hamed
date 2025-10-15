@@ -414,9 +414,57 @@
       </div>
 
       <div class="container relative z-10 px-4 mx-auto md:px-8 max-w-7xl">
+        <!-- Navigation Tabs - Mobile (Top) -->
+        <div
+          class="grid grid-cols-3 gap-0 overflow-hidden shadow-2xl lg:hidden"
+        >
+          <button
+            data-i18n="serviceFacelift"
+            class="service-tab active bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            data-target="facelift"
+          >
+            FACELIFT
+          </button>
+          <button
+            data-i18n="serviceRhinoplasty"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            data-target="rhinoplasty"
+          >
+            RHINO
+          </button>
+          <button
+            data-i18n="serviceMommy"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs overflow-hidden font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            data-target="mommy"
+          >
+            MOMMY
+          </button>
+          <button
+            data-i18n="serviceTummy"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            data-target="tummy"
+          >
+            TUMMY
+          </button>
+          <button
+            data-i18n="serviceLipo"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            data-target="lipo"
+          >
+            LIPO
+          </button>
+          <button
+            data-i18n="serviceInject"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            data-target="inject"
+          >
+            INJECT
+          </button>
+        </div>
+
         <!-- Service Cards Container -->
         <div class="relative overflow-hidden bg-white shadow-2xl">
-          <div class="relative min-h-[600px] md:min-h-[650px]">
+          <div class="relative min-h-[650px] md:min-h-[650px]">
             <!-- Service Card 1 - FACELIFT -->
             <div
               class="absolute inset-0 service-card active"
@@ -687,48 +735,48 @@
           </div>
         </div>
 
-        <!-- Navigation Tabs -->
+        <!-- Navigation Tabs - Desktop (Bottom) -->
         <div
-          class="grid grid-cols-3 gap-0 overflow-hidden shadow-2xl lg:grid-cols-6"
+          class="hidden grid-cols-6 gap-0 overflow-hidden shadow-2xl lg:grid"
         >
           <button
             data-i18n="serviceFacelift"
-            class="service-tab active bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            class="service-tab active bg-beige text-[#2c3e50] py-5 px-3 uppercase text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
             data-target="facelift"
           >
             FACELIFT
           </button>
           <button
             data-i18n="serviceRhinoplasty"
-            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
             data-target="rhinoplasty"
           >
             RHINOPLASTY
           </button>
           <button
             data-i18n="serviceMommy"
-            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm overflow-hidden font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-sm overflow-hidden font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
             data-target="mommy"
           >
-            Mommy <span class="hidden md:block">Makeover</span>
+            MOMMY MAKEOVER
           </button>
           <button
             data-i18n="serviceTummy"
-            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
             data-target="tummy"
           >
-            TummyTuck
+            TUMMY TUCK
           </button>
           <button
             data-i18n="serviceLipo"
-            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
             data-target="lipo"
           >
             LIPOSUCTION
           </button>
           <button
             data-i18n="serviceInject"
-            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-xs md:text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
+            class="service-tab bg-beige text-[#2c3e50] py-5 px-3 uppercase text-sm font-semibold transition-all duration-300 hover:bg-[#e5ddd0] cursor-pointer"
             data-target="inject"
           >
             INJECTABLES
